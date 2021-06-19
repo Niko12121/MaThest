@@ -4,6 +4,7 @@ import AnswerOption from '../answers/answer_option'
 
 const Question = (props) => {
 
+    /*This part randomize the order of answers*/
     const order = questions[props.level][props.option][1]
     order.sort(function() { return Math.random() - 0.5 }) 
 

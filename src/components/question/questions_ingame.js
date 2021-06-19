@@ -1,3 +1,6 @@
+/*Question in the bag, every element of the big list is a level,
+every element of a level is a question, every question is [question, [correct, wrong1, wrong2, wrong3, wrong 4]]*/
+
 export const questions = [
     [
         ['What is 2 + 2?', [4, 2, 5, 7, 8]],
