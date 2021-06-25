@@ -10,3 +10,13 @@
 .real_question {
     margin-bottom: 10px;
 }
+
+.option {
+    margin: 5px;
+    padding: 3px;
+    color: #bbb
+}
+
+.option:hover { 
+    background-color: #333;
+}
