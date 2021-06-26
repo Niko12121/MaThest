@@ -11,6 +11,7 @@
     margin-bottom: 10px;
 }
 
+
 .option {
     margin: 5px;
     padding: 3px;
@@ -20,3 +21,14 @@
 .option:hover { 
     background-color: #333;
 }
+
+.correct {
+    color: green;
+    font-weight: bold;
+  }
+
+
+.wrong {
+    color: red;
+    font-weight: bold;
+  }
