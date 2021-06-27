@@ -1,4 +1,4 @@
-import Question from "../question/Question"
+import Question from "../question/question"
 
 /* How many questions per level will the page render */
 const amount_value = 2
