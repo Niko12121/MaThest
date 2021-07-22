@@ -1,4 +1,6 @@
+import React from "react"
 import Question from "../question/question"
+import './test.css'
 
 /* How many questions per level will the page render */
 const amount_value = 2
@@ -21,25 +23,37 @@ function pickRandoms(amount, max) {
     return actual
 }
 
-const Test = () => {
-    let randoms = []
-    /* randoms is like [[0, [2, 7, 4]], [1, [1, 5, 2]]], for the level 0, the questions 2, 7 and 4; 
-    for the level 1, questions 1, 5, 2 */
-    for (let i=0; i<level_value; i++) {
-        randoms.push([i, pickRandoms(amount_value, max_value)])
+class Section extends React.Component {
+    state = {points: 0}
+    constructor(props) {
+        super(props);
+        this.randoms = pickRandoms(amount_value, max_value)
     }
-    let render = []
-    randoms.forEach(a => {
-        render.push(<div>INICIO DE SECCION</div>)
-        a[1].forEach(b => {
-            render.push(<Question level={a[0]} option={b} />)
-        })
-        render.push(<div>TERMINO DE SECCION</div>)
-    })
+    handler = () => {
+        this.setState({ points: this.state.points+1 })
+    }
+    render() {
+        return(
+            <div>
+                <div class='counting'>{this.state.points}/{amount_value}</div>
+                {this.randoms.map(a => {
+                    return <div><Question level={this.props.level} option={a} action={this.handler} /></div>
+                })}
+            </div>
+            )
+        }
+    
+}
+
+const Test = () => {
+    let sections = []
+    for (let i=0; i < level_value; i++) {
+        sections.push(i)
+    }
     return (
-        <div>
-            {render.map(a => {
-                return <div key={a.id}>{a}</div>
+        <div class='app'>
+            {sections.map(a => {
+                return <div class='section'><Section level={a}/></div>
             })}
         </div>
     )
