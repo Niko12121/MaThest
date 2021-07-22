@@ -7,7 +7,7 @@ class Question extends React.Component {
         super(props);
         /* How many options have the tested for question */
         this.options = 1
-        /*This part randomize the order of answers and save the correct answer*/
+        /* This part randomize the order of answers and save the correct answer */
         this.render_order = questions[this.props.level][this.props.option][1]
         const correct = this.render_order[0]
         this.render_order = this.render_order.sort(function() { return Math.random() - 0.5 })

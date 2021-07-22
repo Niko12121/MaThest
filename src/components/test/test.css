@@ -7,7 +7,7 @@ body {
     display: inline-block;
     position: relative;
     background-color: white;
-    outline: solid 10px black;
+    border: solid 10px black;
     padding-left: 20%;
     padding-right: 20%;
     width: 40%;
@@ -15,4 +15,12 @@ body {
 }
 .counting {
     position: static;
+}
+
+.button {
+    display: block;
+    background-color: pink;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 100;
 }

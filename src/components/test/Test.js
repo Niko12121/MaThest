@@ -28,21 +28,36 @@ class Section extends React.Component {
     constructor(props) {
         super(props);
         this.randoms = pickRandoms(amount_value, max_value)
+        this.questions = []
+        for (let i in this.randoms) {
+            this.questions.push(<Question level={this.props.level} option={i} action={this.handler} />)}
     }
     handler = () => {
         this.setState({ points: this.state.points+1 })
     }
     render() {
         return(
-            <div>
+            <div class='section'>
                 <div class='counting'>{this.state.points}/{amount_value}</div>
-                {this.randoms.map(a => {
-                    return <div><Question level={this.props.level} option={a} action={this.handler} /></div>
+                {this.questions.map(a => {
+                    return <div>{a}</div>
                 })}
+                <Button answers={this.questions}/>
             </div>
             )
         }
     
+}
+
+class Button extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return(
+            <button type="button" class='button'>Click Me!</button> 
+        )
+    }
 }
 
 const Test = () => {
@@ -53,7 +68,7 @@ const Test = () => {
     return (
         <div class='app'>
             {sections.map(a => {
-                return <div class='section'><Section level={a}/></div>
+                return <Section level={a}/>
             })}
         </div>
     )
