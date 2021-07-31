@@ -1,6 +1,8 @@
 .header{
+    position: absolute;
     text-align: center;
     background-color: red;
+    z-index: -100;
 }
 
 p{

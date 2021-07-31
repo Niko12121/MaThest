@@ -1,26 +1,22 @@
 body {
+    overflow: hidden;
     background-color: #ffffaa;
 }
+
 .app {
-}
-.section {
-    display: inline-block;
+    left: 30%;
+    top: 35%;
     position: relative;
-    background-color: white;
-    border: solid 10px black;
-    padding-left: 20%;
-    padding-right: 20%;
-    width: 40%;
-    left: 10%;
-}
-.counting {
-    position: static;
 }
 
-.button {
-    display: block;
-    background-color: pink;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 100;
+
+.counting {
+    align-self: center;
+    color: red;
+    background-color: black;
+    display: inline-block;
+}
+
+.showing-sec {
+    z-index: 10
 }

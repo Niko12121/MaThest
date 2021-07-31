@@ -1,21 +1,21 @@
 .question {
+    width: 40vw;
+    position: absolute;
     color: white;
-    background-color: #111;
-    outline: 3px solid #555;
-    margin: 100px;
-    border-radius: 10px;
-    padding: 10px;
+    background-color: #c64;
+    height: 50vh;
 }
 
-.real_question {
-    margin-bottom: 10px;
+.section {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    top: 30vh;
 }
-
 
 .option {
-    margin: 5px;
-    padding: 3px;
-    color: #bbb
+    color: #111;
 }
 
 .option:hover { 
@@ -32,3 +32,8 @@
     color: red;
     font-weight: bold;
   }
+
+.showing-q {
+    z-index: 10
+}
+
