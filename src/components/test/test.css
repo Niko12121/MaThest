@@ -11,10 +11,12 @@ body {
 
 
 .counting {
-    align-self: center;
+    display: flex;
+    justify-content: center;
     color: red;
     background-color: black;
-    display: inline-block;
+    width: 40vw;
+    text-align: center;
 }
 
 .showing-sec {

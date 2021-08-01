@@ -24,8 +24,9 @@ class Section extends React.Component {
         this.randoms = pickRandoms(cons.amount_value, cons.max_value)
         this.questions = []
         let q = 0;
+        console.log(this.randoms)
         for (let i in this.randoms) {
-            this.questions.push(<Question level={this.props.level} option={i} action={this.handler} ques={q}/>)
+            this.questions.push(<Question level={this.props.level} option={this.randoms[i]} action={this.handler} ques={q}/>)
             q++}
     }
     handler = () => {
@@ -36,7 +37,7 @@ class Section extends React.Component {
         if (this.props.level == '0') {cls += ' showing-sec'}
         return(
             <div className={cls}>
-                <div class='counting'>{this.state.points}/{cons.amount_value}</div>
+                <div class='counting'>Nivel {this.props.level + 1}<br></br>{this.state.points}/{cons.amount_value}</div>
                 {this.questions.map(a => {
                     return <div>{a}</div>
                 })}

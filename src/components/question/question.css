@@ -2,8 +2,23 @@
     width: 40vw;
     position: absolute;
     color: white;
-    background-color: #c64;
-    height: 50vh;
+    background-color: teal;
+    height: 40vh;
+    text-align: center;
+    min-height: 155px;
+}
+
+.real-question {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.answers-options {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    height: calc(40vh - 50px);
 }
 
 .section {
@@ -15,21 +30,33 @@
 }
 
 .option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #111;
+    background-color: #c64;
+    text-align: center;
+    transition: 0.3s;
+    margin: 8px;
+    cursor: pointer;
 }
 
 .option:hover { 
-    background-color: #333;
+    color: white;
 }
 
 .correct {
-    color: green;
+    background-color: green;
+    margin: 0;
+    color: white;
     font-weight: bold;
   }
 
 
 .wrong {
-    color: red;
+    background-color: red;
+    margin: 0;
+    color: white;
     font-weight: bold;
   }
 
