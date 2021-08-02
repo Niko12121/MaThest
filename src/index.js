@@ -12,10 +12,7 @@ class TodoApp extends React.Component {
   
   render() {
     return (
-      <div>
-        <App />
-      </div>
-    )
+    <App />)
   }
 }
 

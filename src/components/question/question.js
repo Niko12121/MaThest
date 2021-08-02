@@ -29,32 +29,7 @@ class Question extends React.Component {
                     event.target.classList.add('wrong')}
                 this.options -= 1;
                 await sleep(1000)
-                let actual = document.getElementsByClassName("showing-q")[0];
-                actual.classList.remove("showing-q")
-                let s = actual.className.split(' ')[1]
-                let si = ''
-                /*When the game is over*/
-                if (parseInt(s[0]) + 1 == cons.level_value && parseInt(s[2]) + 1 == cons.amount_value) {
-                    console.log('GANAMOSSSS')}
-                else {
-                    /*When the section is over*/
-                    if (parseInt(s[2]) >= cons.amount_value - 1) {
-                        /*function for check if the section have the points necessaries*/
-                        let context = parseInt(document.getElementsByClassName("counting")[0].innerText.split("\n")[3].split("/")[0])
-                        if (context / cons.amount_value >= cons.requirement) {
-                            si += (parseInt(s[0]) + 1).toString() + '-0';
-                            let actsec = document.getElementsByClassName('showing-sec')[0];
-                            actsec.classList.remove('showing-sec')
-                            let sigsec = document.getElementsByClassName('sec-' + (parseInt(actsec.classList[1].split('-')[1]) + 1).toString())[0]
-                            sigsec.className += ' showing-sec'
-                        } else {
-                            /* CREATE DIV OF "YOU LOSE" and button of restart */
-                        }
-                    } else {
-                        si += s[0] + '-' + (parseInt(s[2])+1).toString()};
-                    let sig = document.getElementsByClassName(si)[0];
-                    sig.className += ' showing-q';
-                }
+                this.props.next_ques()
             }
         }
     }
