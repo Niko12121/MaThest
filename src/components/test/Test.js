@@ -17,6 +17,15 @@ function pickRandoms(amount, max) {
     return actual
 }
 
+function giveInfo(win) {
+    let info = document.getElementById("info")
+    info.style.zIndex = 200;
+    if (win) {
+        info.innerHTML = "WIN<button type='button' onclick='window.location.reload()'>Click me</button>";
+    } else {
+        info.innerHTML = "LOSE<button type='button' onclick='window.location.reload()'>Click me</button>";
+    }
+}
 
 
 
@@ -83,10 +92,9 @@ class Test extends React.Component {
         }
         /* If win the section, else not */
         if (corrects / cons.amount_value >= cons.requirement) {
-            console.log("WIN SECTION")
             /* If it's the end of game, else not */
             if (actual_sec + 1 == cons.level_value && actual_ques + 1 == cons.amount_value) {
-                console.log('¡WIN GAME!');
+                giveInfo(true);
                 return}
             /* Showing the next section */
             let actsec = document.getElementsByClassName('showing-sec')[0];
@@ -99,18 +107,19 @@ class Test extends React.Component {
             sig.className += ' showing-q';
             }
         else {
-            console.log("¡LOSE GAME!");
+            giveInfo(false)
             return}
     }
 
     render () {
         return (
             <div class='app'>
+                <div id="info">HOLA</div>
                 {this.sections.map(a => {
                     return <Section level={a} next_question={this.next_question}/>
                 })}
             </div>
-    )
-}}
+    )}
+}
 
 export default Test;

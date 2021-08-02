@@ -4,9 +4,14 @@ body {
 }
 
 .app {
+    display: inline-block;
+    position: absolute;
     left: 30%;
-    top: 35%;
-    position: relative;
+    top: 30%;
+    height: 40vh;
+    width: 40vw;
+    max-height: 270px;
+    min-height: 155px;
 }
 
 
