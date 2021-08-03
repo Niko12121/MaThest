@@ -1,7 +1,6 @@
 import React from 'react'
 import './question.css'
 import questions from './questions_ingame'
-import * as cons from '../../constants';
 
 /*sleep the code ms miliseconds*/
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

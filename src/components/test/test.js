@@ -33,7 +33,7 @@ class Section extends React.Component {
     state = {points: 0}
     constructor(props) {
         super(props);
-        this.randoms = pickRandoms(cons.amount_value, cons.max_value)
+        this.randoms = pickRandoms(this.props.many_q, cons.max_value)
         this.questions = []
         let q = 0;
         for (let i in this.randoms) {
@@ -54,7 +54,7 @@ class Section extends React.Component {
         if (this.props.level == '0') {cls += ' showing-sec'}
         return(
             <div className={cls}>
-                <div class='counting'>Nivel {this.props.level + 1}<br></br>{this.state.points}/{cons.amount_value}</div>
+                <div class='counting'>Nivel {this.props.level + 1}<br></br>{this.state.points}/{this.props.many_q}</div>
                 {this.questions.map(a => {
                     return <div>{a}</div>
                 })}
@@ -67,12 +67,8 @@ class Section extends React.Component {
 class Test extends React.Component {
     constructor(props) {
         super(props);
-        this.sections = []
-        for (let i=0; i < cons.level_value; i++) {
-            this.sections.push(i)}
     }
-
-    /*When the user select an option, this function detect the question, register the next-one and show to the user*/
+     /*When the user select an option, this function detect the question, register the next-one and show to the user*/
     next_question = (corrects) => {
         let actual = document.getElementsByClassName("showing-q")[0];
         actual.classList.remove("showing-q")
@@ -83,7 +79,7 @@ class Test extends React.Component {
         let actual_ques = parseInt(s.split('-')[1])
         let si = ''
         /* If it's NOT the end of section */
-        if (actual_ques < cons.amount_value - 1) {
+        if (actual_ques < this.props.many_q - 1) {
             /* si is the name of next questions which will be render */
             si += actual_sec.toString() + '-' + (actual_ques + 1).toString();
             let sig = document.getElementsByClassName(si)[0];
@@ -91,9 +87,9 @@ class Test extends React.Component {
             return
         }
         /* If win the section, else not */
-        if (corrects / cons.amount_value >= cons.requirement) {
+        if (corrects / this.props.many_q >= this.props.requer) {
             /* If it's the end of game, else not */
-            if (actual_sec + 1 == cons.level_value && actual_ques + 1 == cons.amount_value) {
+            if (actual_sec + 1 == this.props.many_s && actual_ques + 1 == this.props.many_q) {
                 giveInfo(true);
                 return}
             /* Showing the next section */
@@ -110,16 +106,19 @@ class Test extends React.Component {
             giveInfo(false)
             return}
     }
-
     render () {
+        this.sections = []
+        for (let i=0; i < this.props.many_s; i++) {
+            this.sections.push(i)}
         return (
             <div class='app'>
                 <div id="info">HOLA</div>
                 {this.sections.map(a => {
-                    return <Section level={a} next_question={this.next_question}/>
+                    return <Section level={a} next_question={this.next_question} many_q={this.props.many_q}/>
                 })}
             </div>
-    )}
+        )
+    }
 }
 
 export default Test;

@@ -1,0 +1,7 @@
+#form {
+    position: absolute;
+    top: 30vh;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
