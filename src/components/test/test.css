@@ -1,28 +1,24 @@
-body {
-    overflow-x: hidden;
-    overflow-y: scroll;
-    background-color: #ffffaa;
-}
-
 .app {
     display: inline-block;
     position: absolute;
     left: 30%;
-    top: 30%;
+    top: 20%;
     height: 40vh;
     width: 40vw;
     max-height: 270px;
     min-height: 155px;
+    opacity: 0.9;
 }
 
 
 .counting {
     display: flex;
-    justify-content: center;
-    color: red;
-    background-color: black;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color: #fee;
+    border-radius: 10px;
     width: 40vw;
-    text-align: center;
 }
 
 .showing-sec {
@@ -30,11 +26,32 @@ body {
 }
 
 #info {
-    display: inline-block;
+    display: none;
     position: absolute;
-    background-color: teal;
+    background: transparent;
     width: 100%;
     height: calc(100% + 40px);
+    top: 100px;
     text-align: center;
     z-index: -1;
+}
+
+.section-info {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 12px;
+}
+
+#info-sec {
+    padding-left: 10px;
+    float: left;
+}
+
+#info-ques {
+    margin:0 auto
+}
+
+#info-corr {
+    padding-right: 10px;
+    float: right;
 }

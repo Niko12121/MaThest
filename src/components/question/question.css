@@ -1,12 +1,13 @@
 .question {
     display: none;
     position: absolute;
-    color: white;
-    background-color: teal;
+    color: black;
+    background-color: transparent;
     width: 100%;
     height: 100%;
     text-align: center;
     min-height: 155px;
+    border-radius: 10px;
 }
 
 .real-question {
@@ -32,12 +33,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #111;
-    background-color: #c64;
+    color: black;
+    background-color: #fee;
     text-align: center;
     transition: 0.3s;
     margin: 8px;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .option:hover { 

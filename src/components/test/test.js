@@ -19,7 +19,7 @@ function pickRandoms(amount, max) {
 
 
 class Section extends React.Component {
-    state = {points: 0}
+    state = {points: 0, question: 1}
     constructor(props) {
         super(props);
         this.randoms = pickRandoms(this.props.many_q, cons.max_value)
@@ -30,11 +30,12 @@ class Section extends React.Component {
             q++}
     }
     handler = () => {
-        this.setState({ points: this.state.points+1 })
+        this.setState({ points: this.state.points + 1 })
     }
 
     next_question = () => {
         this.props.next_question(this.state.points)
+        this.setState({ question: this.state.question + 1 })
     }
 
     render() {
@@ -43,7 +44,7 @@ class Section extends React.Component {
         if (this.props.level.toString() === "0") {cls += " showing-sec"}
         return(
             <div className={cls}>
-                <div class='counting'>Nivel {this.props.level + 1}<br></br>{this.state.points}/{this.props.many_q}</div>
+                <div class='counting'><div class="section-info" id="info-sec">Section {this.props.level + 1}</div><div class="section-info" id="info-ques">Question: {this.state.question}/{this.props.many_q}</div><div class="section-info" id="info-corr">Corrects: {this.state.points}/{this.props.req}</div></div><br></br><br></br>
                 {this.questions.map(a => {
                     return <div>{a}</div>
                 })}
@@ -104,6 +105,7 @@ class Test extends React.Component {
         /* Show the info of the game */
         let info = document.getElementById("info");
         info.style.zIndex = 200;
+        info.style.display = "inline-block";
         let t = ""
         t += `You played the math test with ${this.props.many_s} sections at ${100 * this.props.requer}% of requirement<br>`
         if (this.points.length < this.props.many_s) {t += `But you just get the section ${this.points.length}<br>`}
@@ -125,7 +127,7 @@ class Test extends React.Component {
 
     render () {
         for (let i=0; i < this.props.many_s; i++) {
-            this.sections.push(<Section level={i} next_question={this.next_question} many_q={this.props.many_q}/>)}
+            this.sections.push(<Section level={i} next_question={this.next_question} many_q={this.props.many_q} req={-Math.floor(-this.props.requer * this.props.many_q)}/>)}
         return (
             <div class='app'>
                 <div id="info"></div>

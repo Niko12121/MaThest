@@ -6,11 +6,19 @@
     padding-bottom: 10px;
 }
 
+
 #explain-text {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 30%;
+    padding-right: 30%;
     text-align: center;
     font-size: 15px;
+    opacity: 0.5;
+    transition: 0.5s;
+    cursor: default;
+}
+
+#explain-text:hover {
+    opacity: 1;
 }
 
 #explain-table {
