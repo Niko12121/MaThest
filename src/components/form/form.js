@@ -23,7 +23,9 @@ class Form extends React.Component {
         let r = parseInt(document.getElementById("requirement").value);
         if (isNaN(r) || r < 0 || r > 100) {
             alert('¡Requirement must be a number between 0 and 100!')
-        } else {this.setState({ isready: true, many_ques: q, many_sec: l, requer: r/100 })
+        } else {
+            document.getElementById("explain").style.display = "none";
+            this.setState({ isready: true, many_ques: q, many_sec: l, requer: r/100 })
         }
     }
     render() {
@@ -33,13 +35,13 @@ class Form extends React.Component {
         return (
             <div id="form">
                 <form>
-                    How many questions per section?<br></br><select id="questions_value">
-                        {this.options.map(a => {
+                    How many <b>sections</b>?<br></br><select id="levels_value">
+                        {this.levels.map(a => {
                             return <option value={a}>{a}</option>
                         })}
                     </select><br></br><br></br>
-                    How many sections?<br></br><select id="levels_value">
-                        {this.levels.map(a => {
+                    How many questions per section?<br></br><select id="questions_value">
+                        {this.options.map(a => {
                             return <option value={a}>{a}</option>
                         })}
                     </select><br></br><br></br>

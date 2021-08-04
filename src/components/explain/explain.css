@@ -1,0 +1,23 @@
+#explain {
+    position: relative;
+    display: block;
+    top: calc(30vh + 320px);
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#explain-text {
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    font-size: 15px;
+}
+
+#explain-table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#explain-table td {
+    padding: 0 15px;
+  }

@@ -1,8 +1,8 @@
 .header{
     position: absolute;
+    display: block;
     text-align: center;
-    background-color: red;
-    z-index: -100;
+    width: 100%;
 }
 
 p{
