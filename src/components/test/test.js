@@ -17,17 +17,6 @@ function pickRandoms(amount, max) {
     return actual
 }
 
-function giveInfo(win) {
-    let info = document.getElementById("info")
-    info.style.zIndex = 200;
-    if (win) {
-        info.innerHTML = "WIN<button type='button' onclick='window.location.reload()'>Click me</button>";
-    } else {
-        info.innerHTML = "LOSE<button type='button' onclick='window.location.reload()'>Click me</button>";
-    }
-}
-
-
 
 class Section extends React.Component {
     state = {points: 0}
@@ -50,8 +39,8 @@ class Section extends React.Component {
 
     render() {
         /*the first question is manually renderized*/
-        var cls = 'section '+"sec-"+this.props.level;
-        if (this.props.level == '0') {cls += ' showing-sec'}
+        var cls = "section sec-"+this.props.level;
+        if (this.props.level.toString() === "0") {cls += " showing-sec"}
         return(
             <div className={cls}>
                 <div class='counting'>Nivel {this.props.level + 1}<br></br>{this.state.points}/{this.props.many_q}</div>
@@ -67,8 +56,11 @@ class Section extends React.Component {
 class Test extends React.Component {
     constructor(props) {
         super(props);
+        this.sections = []
+        this.points = []
     }
-     /*When the user select an option, this function detect the question, register the next-one and show to the user*/
+
+    /*When the user select an option, this function detect the question, register the next-one and show to the user*/
     next_question = (corrects) => {
         let actual = document.getElementsByClassName("showing-q")[0];
         actual.classList.remove("showing-q")
@@ -86,11 +78,12 @@ class Test extends React.Component {
             sig.className += ' showing-q';
             return
         }
+        this.points.push(corrects)
         /* If win the section, else not */
         if (corrects / this.props.many_q >= this.props.requer) {
             /* If it's the end of game, else not */
-            if (actual_sec + 1 == this.props.many_s && actual_ques + 1 == this.props.many_q) {
-                giveInfo(true);
+            if ((actual_sec + 1).toString() === this.props.many_s.toString() && (actual_ques + 1).toString() === this.props.many_q.toString()) {
+                this.giveInfo(true);
                 return}
             /* Showing the next section */
             let actsec = document.getElementsByClassName('showing-sec')[0];
@@ -103,18 +96,41 @@ class Test extends React.Component {
             sig.className += ' showing-q';
             }
         else {
-            giveInfo(false)
+            this.giveInfo(false)
             return}
     }
+
+    giveInfo = (win) => {
+        /* Show the info of the game */
+        let info = document.getElementById("info");
+        info.style.zIndex = 200;
+        let t = ""
+        t += `You played the math test with ${this.props.many_s} sections at ${100 * this.props.requer}% of requirement<br>`
+        if (this.points.length < this.props.many_s) {t += `But you just get the section ${this.points.length}<br>`}
+        t += `Each section had ${this.props.many_s} questions<br>`
+        let i = 1;
+        let sum = 0
+        this.points.forEach(a => {
+            t += `Section ${i}: ` + a + "/" + this.props.many_q + "<br>";
+            sum += a;
+            i++})
+        t += `That give you a total of ${sum}/${this.props.many_s * this.props.many_q} = ${Math.round(1000 * sum/(this.props.many_s * this.props.many_q)) / 10}% of precision`
+        if (win) {
+            t += "<p>¡Congratulations!</p><br>";
+        } else {
+            t += "<p>¡Try Again!</p><br>";
+        }
+        info.innerHTML = t + "<button type='button' onclick='window.location.reload()'>Play again</button>";
+    }
+
     render () {
-        this.sections = []
         for (let i=0; i < this.props.many_s; i++) {
-            this.sections.push(i)}
+            this.sections.push(<Section level={i} next_question={this.next_question} many_q={this.props.many_q}/>)}
         return (
             <div class='app'>
-                <div id="info">HOLA</div>
+                <div id="info"></div>
                 {this.sections.map(a => {
-                    return <Section level={a} next_question={this.next_question} many_q={this.props.many_q}/>
+                    return a
                 })}
             </div>
         )

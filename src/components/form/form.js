@@ -33,19 +33,19 @@ class Form extends React.Component {
         return (
             <div id="form">
                 <form>
-                    ¿How many questions per section?<br></br><select id="questions_value">
+                    How many questions per section?<br></br><select id="questions_value">
                         {this.options.map(a => {
                             return <option value={a}>{a}</option>
                         })}
                     </select><br></br><br></br>
-                    ¿How many sections?<br></br><select id="levels_value">
+                    How many sections?<br></br><select id="levels_value">
                         {this.levels.map(a => {
                             return <option value={a}>{a}</option>
                         })}
                     </select><br></br><br></br>
-                    % difficulty<br></br><input type="number" id="requirement" placeholder="Number between 0 and 100" min="0" max="100"></input><br></br><br></br>
+                    % requirement<br></br>(with 0% you will pass every section; with 100% you will need all correct!)<br></br><input type="number" id="requirement" placeholder="Number between 0 and 100" min="0" max="100"></input><br></br><br></br>
                 </form>
-                <button onClick={this.ready}>Soy el form</button>
+                <button onClick={this.ready}>Let's play!</button>
             </div>
         )
     }

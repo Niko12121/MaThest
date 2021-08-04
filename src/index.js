@@ -6,17 +6,15 @@ import reportWebVitals from './reportWebVitals';
 
 
 class TodoApp extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+
   
   render() {
     return (
-    <App />)
-  }
+      <App />)
+    }
 }
 
 
-ReactDOM.render(<TodoApp />,document.getElementById('root'));
+ReactDOM.render(<TodoApp />, document.getElementById('root'));
 
 reportWebVitals();

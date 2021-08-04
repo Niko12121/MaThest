@@ -63,13 +63,4 @@
     display: inherit;
 }
 
-#info {
-    display: inline-block;
-    position: absolute;
-    background-color: teal;
-    opacity: 0.8;
-    width: 100%;
-    height: calc(100% + 40px);
-    z-index: -1;
-}
 

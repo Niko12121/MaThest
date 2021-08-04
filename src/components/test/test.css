@@ -1,5 +1,6 @@
 body {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
     background-color: #ffffaa;
 }
 
@@ -26,4 +27,14 @@ body {
 
 .showing-sec {
     z-index: 10
+}
+
+#info {
+    display: inline-block;
+    position: absolute;
+    background-color: teal;
+    width: 100%;
+    height: calc(100% + 40px);
+    text-align: center;
+    z-index: -1;
 }
