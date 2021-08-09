@@ -4,7 +4,7 @@ Sections 1-5 basic, Sections 6-10 intermediate, 11-15 intro-advanced, 16-20 adva
 
 export const questions = [
     [/* Section 1 */
-        ["<p>2+2 equals to</p>", [4, 2, 5, 7, 8, 22]],
+        ["<p> 2+2 equals to</p>", [4, 2, 5, 7, 8, 22]],
         ["<p>12+11 equals to</p>", [23, 132, 1.1, 22, 20, 25]],
         ["<p>17-19 equals to</p>", [-2, 2, 0, -4, -0.5, 1]],
         ["<p>12+21 equals to</p>", [33, 12, -9, 30, 23, 32]],
@@ -46,11 +46,18 @@ export const questions = [
         ["<p>If the rect y=x+n intersect once with the paraboll y=ax²+bx+c, what is n?</p>", ["c - (b-1)² / 4a", "(8c - b²) / 4a", "(4c² - b(b + a)²", "(2c - b²) / 4a²", "b² - 4ac", "a² + b + c"]]
     ],
     [/* Section 7 */
-        ["<p></p>", [,,,,,]],
-        ["<p></p>", [,,,,,]],
-        ["<p></p>", [,,,,,]],
-        ["<p></p>", [,,,,,]],
-        ["<p></p>", [,,,,,]]
+        ["<p>Which of the next numbers is not integer</p>", ["2/(0.4)⁵" ,"1,999...", "1/(0.2)⁴", "0.242424.../0.080808...", "-124 / 2", "0"]],
+        ["<p>How many solution have the equality (x²+2x+1)²=0</p>", [1, 0, -1, 2, 3, 4]],
+        ["<p>Let f a function from R to R, if f(q)=0 for all q rationals, then f=0</p>", ["True", "False"]],
+        ["<p>How many natural numbers exist as solution to inequallity 2x²+4x+2 ≤ 8÷x</p>", [1, 0, 2, 3, 4, 5]],
+        ["<p>If i² = -1, then (1 + i) × (1 - i) equals</p>", [2, 0, "i", "2i", 1, -2]]
+    ],
+    [/* Section 8 */
+        ["<p>If the distance between (5, 2, 0) and (7, -4, x) is 7, then x can be equal to</p>", [3, 2, 0, 1, -4, 5]],
+        ["<p>L = (4, 1) + λ(2, 8) then L also equals</p>", ["4x-y-15 = 0", "2x-2y-13 = 0", "8x-y-35 = 0", "-2x+3y+5 = 0", "3x-2y+1 = 0", "4x - y - 17 = 0"]],
+        ["<p>If x and y are reals with 0<x<y, and xy = 1, which is the biggest number that x + y can not be</p>", [2, 1, 0, "None", -2, -1]],
+        ["<p></p>", [1,1,1,1,1,1]],
+        ["<p></p>", [1,1,1,1,1,1]]
     ]
 ]
 

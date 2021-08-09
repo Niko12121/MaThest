@@ -39,7 +39,7 @@ class Question extends React.Component {
         if (this.props.level+"-"+this.props.ques === "0-0") {cls += " showing-q"}
         return (
         <div className={cls}>
-            <div class="real-question" dangerouslySetInnerHTML={{__html: questions[this.props.level][this.props.option][0]}}/>
+            <div class="real-question">{questions[this.props.level][this.props.option][0]}</div>
             <div class="answers-options">
             {this.render_order.map((a, index) => {
                 return (
