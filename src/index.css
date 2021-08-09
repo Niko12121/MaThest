@@ -64,9 +64,6 @@ code {
   animation: animate 24s linear infinite;
 }
 
-
-
-
 .background li:nth-child(0) {
   left: 40%;
   width: 37px;

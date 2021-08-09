@@ -19,11 +19,12 @@ class Question extends React.Component {
         and update the score*/
         this.corroborate = async (event) => {
             if (this.options >= 1) {
-                let real = event.target.innerHTML === correct.toString()
+                let real = event.target.innerHTML === correct.toString();
+                console.log(event.target.outerHTML);
                 if (real) {
                     event.target.classList.add("correct");
                     this.props.action()
-                    }
+                }
                 else {
                     event.target.classList.add("wrong")}
                 this.options -= 1;

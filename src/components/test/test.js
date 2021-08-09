@@ -106,17 +106,23 @@ class Test extends React.Component {
         let info = document.getElementById("info");
         info.style.zIndex = 200;
         info.style.display = "inline-block";
+        /* Remove counting divs */
+        let countings = document.getElementsByClassName("counting")
+        for (let i = 0; i<Object.keys(countings).length; i++) {
+            countings[i].style.display = "none";
+        }
+        /* t is the info */
         let t = ""
-        t += `You played the math test with ${this.props.many_s} sections at ${100 * this.props.requer}% of requirement<br>`
-        if (this.points.length < this.props.many_s) {t += `But you just get the section ${this.points.length}<br>`}
-        t += `Each section had ${this.props.many_s} questions<br>`
+        t += `You played the math test with <b>${this.props.many_s}</b> sections at <b>${100 * this.props.requer}%</b> of requirement<br>`
+        if (this.points.length < this.props.many_s) {t += `But you just get the section <b>${this.points.length}</b><br>`}
+        t += `Each section had <b>${this.props.many_s}</b> questions<br>`
         let i = 1;
         let sum = 0
         this.points.forEach(a => {
             t += `Section ${i}: ` + a + "/" + this.props.many_q + "<br>";
             sum += a;
             i++})
-        t += `That give you a total of ${sum}/${this.props.many_s * this.props.many_q} = ${Math.round(1000 * sum/(this.props.many_s * this.props.many_q)) / 10}% of precision`
+        t += `That give you a total of ${sum}/${this.props.many_s * this.props.many_q} = <b>${Math.round(1000 * sum/(this.props.many_s * this.props.many_q)) / 10}%</b> of precision`
         if (win) {
             t += "<p>¡Congratulations!</p><br>";
         } else {

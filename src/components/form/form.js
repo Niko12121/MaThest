@@ -34,17 +34,21 @@ class Form extends React.Component {
         return (
             <div id="form">
                 <form>
-                    How many <b>sections</b>?<br></br><select id="levels_value" value={cons.level_value}>
+                    How many <b>sections</b>?<br></br><select id="levels_value">
                         {this.levels.map(a => {
+                            if (a === cons.level_value) {
+                                return <option value={a} selected>{a}</option>}
                             return <option value={a}>{a}</option>
                         })}
                     </select><br></br><br></br>
-                    How many questions per section?<br></br><select id="questions_value" value={cons.max_value}>
+                    How many questions per section?<br></br><select id="questions_value">
                         {this.options.map(a => {
+                            if (a === 3) {
+                                return <option value={a} selected>{a}</option>}
                             return <option value={a}>{a}</option>
                         })}
                     </select><br></br><br></br>
-                    % requirement<br></br>(with 0% you will pass every section even if you fail all; with 100% you will need all correct!)<br></br><input type="number" id="requirement" placeholder="Number between 0 and 100" min="0" max="100"></input><br></br><br></br>
+                    % requirement<br></br>(with 0 you will pass every section even if you fail all; with 100 you will need all correct!)<br></br><input type="number" id="requirement" placeholder="Number between 0 and 100" min="0" max="100" step="10"></input><br></br><br></br>
                 </form>
                 <button onClick={this.ready}>Let's play!</button>
             </div>
