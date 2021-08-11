@@ -48,7 +48,7 @@ export const questions = [
     [/* Section 7 */
         ["<p>Which of the next numbers is not integer</p>", ["2/(0.4)⁵" ,"1,999...", "1/(0.2)⁴", "0.242424.../0.080808...", "-124 / 2", "0"]],
         ["<p>How many solution have the equality (x²+2x+1)²=0</p>", [1, 0, -1, 2, 3, 4]],
-        ["<p>Let f a function from R to R, if f(q)=0 for all q rationals, then f=0</p>", ["True", "False"]],
+        ["<p>Let f a function &#8477; -> &#8477;, if f(q)=0 for all q in &#8474;, then f=0</p>", ["True", "False"]],
         ["<p>How many natural numbers exist as solution to inequallity 2x²+4x+2 ≤ 8÷x</p>", [1, 0, 2, 3, 4, 5]],
         ["<p>If i² = -1, then (1 + i) × (1 - i) equals</p>", [2, 0, "i", "2i", 1, -2]]
     ],
@@ -56,8 +56,21 @@ export const questions = [
         ["<p>If the distance between (5, 2, 0) and (7, -4, x) is 7, then x can be equal to</p>", [3, 2, 0, 1, -4, 5]],
         ["<p>L = (4, 1) + λ(2, 8) then L also equals</p>", ["4x-y-15 = 0", "2x-2y-13 = 0", "8x-y-35 = 0", "-2x+3y+5 = 0", "3x-2y+1 = 0", "4x - y - 17 = 0"]],
         ["<p>If x and y are reals with 0<x<y, and xy = 1, which is the biggest number that x + y can not be</p>", [2, 1, 0, "None", -2, -1]],
-        ["<p></p>", [1,1,1,1,1,1]],
-        ["<p></p>", [1,1,1,1,1,1]]
+        ["<p>1&frasl;10⁴ × 20⁵ equals to</p>", [320, 160, "1&frasl;4", 8, 1, "1&frasl;2"]],
+        ["<p>If i know 3 points of a square, then i know the area of that square</p>", ["False", "True"]]
+    ],
+    [/* Section 9 */
+        ["<p>There are more rational numbers than reals between 0 and 1</p>", ["False", "True"]],
+        ["<p>If a circle has diameter x cm. and area x cm.², then x equals to</p>", [2, 0, 1, "π", 4, 6]],
+        ["<p>How many different anagram exist (not necessarily meaningful) of the word 'revenge'</p>", [840, 720, 5040, 72, 1024, 640]],
+        ["<p>If |4-2x| > 8</p> then", ["x < -2 or x > 6", "x < -2 and x > 6", "x < 2", "x < 2 and x > -6", "x > 2 and x < 6", "x > 2 or x < 6"]]
+    ],
+    [/* Section 10 */
+        ["<p>If f(x) has inverse in all R then f(x) can not be</p>", ["x²", "x³", "x¹⁷", "x", "x³ + 81", "x + 1"]],
+        ["<p>If i have a notebook paper, and i draw n (straight) lines from border to border, what is the smallest number that i need to paint all the paper without adjacents same color regions, no matter the way how i draw the lines</p>", [2, "n²", 3, 4, "n + 1", "n"]],
+        ["Sin(112.5)"],
+        ["1 < sin(e*x*cos(x²)/x)"],
+        ["(1 + 1/n)^2n"]
     ]
 ]
 
