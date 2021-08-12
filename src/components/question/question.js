@@ -12,25 +12,24 @@ class Question extends React.Component {
         this.options = 1
         /* This part randomize the order of answers and save the correct answer */
         this.render_order = questions[this.props.level][this.props.option][1]
-        const correct = this.render_order[0]
+        this.correct_ans = this.render_order[0]
         this.render_order = this.render_order.sort(function() { return Math.random() - 0.5 })
 
-        /*this function change class name of the question already answered, to show the next one, 
-        and update the score*/
-        this.corroborate = async (event) => {
-            if (this.options >= 1) {
-                let real = event.target.innerHTML === correct.toString();
-                console.log(event.target.outerHTML);
-                if (real) {
-                    event.target.classList.add("correct");
-                    this.props.action()
-                }
-                else {
-                    event.target.classList.add("wrong")}
-                this.options -= 1;
-                await sleep(1000)
-                this.props.next_ques()
-            }
+        /* When the answer select the correct/wrong answer */
+        this.correct = async (event) => {
+            if (this.options === 0) {return};
+            this.options -= 1;
+            event.target.classList.add("correct");
+            this.props.action();
+            await sleep(1000);
+            this.props.next_ques()
+        }
+        this.wrong = async (event) => {
+            if (this.options === 0) {return};
+            this.options -= 1;
+            event.target.classList.add("wrong");
+            await sleep(1000);
+            this.props.next_ques()
         }
     }
     render() {
@@ -42,8 +41,12 @@ class Question extends React.Component {
             <div class="real-question" dangerouslySetInnerHTML={{__html: questions[this.props.level][this.props.option][0]}}/>
             <div class="answers-options">
             {this.render_order.map((a, index) => {
+                if (a === this.correct_ans) {
+                    return(
+                        <div className="option" onClick={this.correct} dangerouslySetInnerHTML={{__html: "<div class='trap'>"+a+"</div>"}}/>
+                    )}
                 return (
-                    <div className="option" onClick={this.corroborate} dangerouslySetInnerHTML={{__html: a}}/>
+                    <div className="option" onClick={this.wrong} dangerouslySetInnerHTML={{__html: "<div class='trap'>"+a+"</div>"}}/>
                 )})}
             </div>
         </div>)}}

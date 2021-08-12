@@ -1,7 +1,7 @@
 #explain {
     position: relative;
     display: block;
-    top: calc(30vh + 320px);
+    top: 100vh;
     text-align: center;
     padding-bottom: 10px;
 }
