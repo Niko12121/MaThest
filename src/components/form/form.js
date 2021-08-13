@@ -31,7 +31,7 @@ class Form extends React.Component {
                             return <option value={a}>{a}</option>
                         })}
                     </select><br></br><br></br>
-                    How many questions per section?<br></br><select id="questions_value" onChange={(event) => {this.setState({ many_ques: parseInt(event.target.value), requer: parseInt(event.target.value) - 1 }); console.log(this.state)}}>
+                    How many questions per section?<br></br><select id="questions_value" onChange={(event) => {this.setState({ many_ques: parseInt(event.target.value), requer: parseInt(event.target.value)}); console.log(this.state)}}>
                         {this.options.map(a => {
                             if (a === 3) {
                                 return <option value={a} selected>{a}</option>}
