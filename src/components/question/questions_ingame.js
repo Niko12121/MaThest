@@ -69,7 +69,7 @@ export const questions = [
     [/* Section 10 */
         ["<p>If f(x) has inverse in all R then f(x) can not be</p>", ["x²", "x³", "x¹⁷", "x", "x³ + 81", "x + 1"]],
         ["<p>If i have a notebook paper, and i draw n (straight) lines from border to border, what is the smallest number that i need to paint all the paper without adjacents same color regions, no matter the way how i draw the lines</p>", [2, "n²", 3, 4, "n + 1", "n"]],
-        ["sin(135)", ["<sup>√2</sup> &#8260; <sub>2</sub>", "<sup>√3</sup> &#8260; <sub>2</sub>", "1", "0", "1&frasl;2", "<sup>√2</sup> &#8260; <sub>5</sub>"]],
+        ["sin(135) equals", ["<sup>√2</sup> &#8260; <sub>2</sub>", "<sup>√3</sup> &#8260; <sub>2</sub>", "1", "0", "1&frasl;2", "<sup>√2</sup> &#8260; <sub>5</sub>"]],
         ["1 < sin(e × x × cos(x²)/x)", ["∅", "[0, ∞)", "[ln(2), ∞)", "(-∞, 0]", "all R", "[2π, ∞)"]],
         ["When n tends to ∞, (1 + 1/n)<sup>2n</sup> tends to", ["e²", "ln(2)", "sin(2)", "e", "ln(2)²", "1"]]
     ],
@@ -92,15 +92,32 @@ export const questions = [
         ["<p>If f(x)=tan(x) then <font size=5>∫</font><font SIZE=3>f(x)dx</font> equals c + </p>", ["ln|sec(x)|", "ln|sin(x)|", "ln(e<sup>tan(x)</sup>)", "ln|csc(x)|", "sin(ln(x))", "cos(ln(x))"]],
         ["<p>If a<sub>n</sub>=1+½+¼+...+<sup>1</sup> &#8260; <sub>2<sup>n</sup></sub>, then when n->∞, a<sub>n</sub> tends to</p>", [2, 1, "e", "e-1", "3&frasl;2", 3]],
         ["<p>Serie of a<sub>n</sub> (a<sub>1</sub>+a<sub>2</sub>+...) converge if a<sub>n</sub>=<br>1) -1<sup>n</sup> n<sup>-1</sup><br>2) cos(<sup>1</sup> &#8260; <sub>n</sub>)<br>3) <sup>sin(e)<sup>n</sup></sup> &#8260; <sub>2<sup>n</sup></sub>; then in order, 1, 2, 3:</p>", ["conv, div, conv", "conv, div, div", "div, div, conv", "conv, conv, conv", "div, div, div", "conv, conv, div"]],
-        ["<p>Let G group with order 2310, and H subgroup, then H can not be of order</p>", [23, 22, 55, 15, 165, 385]],
-        ["<p>If there not are n and m integers such that nx + my = 1 then x and y can not be</p>", ["3 and 39", "3 and 51", "15 and 55", "21 and 77", "1 and 2", "8 and 782"]]
+        ["<p>(2+(2+(2+...)<sup>1&frasl;2</sup>)<sup>1&frasl;2</sup>)<sup>1&frasl;2</sup> tends to</p>", [2, "ln(2)", "e", "<sup>1+√5</sup> &#8260; <sub>2</sub>", 2, 4]],
+        ["<p>Let v=(1,8,-2) and ℼ the plane defined by x-2y+z+1=0, both in ℝ³ then distance from v to ℼ equals</p>" , ["<sup>16</sup> &#8260; <sub>√5</sub>", "<sup>9</sup> &#8260; <sub>√5</sub>", "<sup>16</sup> &#8260; <sub>√3</sub>", "<sup>9</sup> &#8260; <sub>√3</sub>", "<sup>16</sup> &#8260; <sub>√7</sub>", "<sup>9</sup> &#8260; <sub>√7</sub>"]]
     ],
     [/* Section 14 */
         ["<p>Let f(x,y)=2xy then ∇f equals</p>", ["(2x, 2y)", "2x+2y", "(2y, 2x)", "(x, y)", "2x", "2y"]],
         ["<p>How many rational soutions the polinomy 4x⁵-9x³-8x²+2x+2 has?</p>", [2, 1, 3, 4, 5, 0]],
         ["<p>If f(x)=<sup>x-4</sup> &#8260; <sub>x²+2x-15</sub> then <font size=5>∫</font><font SIZE=3>f(x)dx</font> equals c + </p>", ["1&frasl;8 ln|<sup>(x+5)⁹</sup> &#8260; <sub>x-3</sub>|", "1&frasl;8 ln|<sup>(x+5)⁹</sup> &#8260; <sub>(x-8)²</sub>|", "1&frasl;4 ln|<sup>(x+8)⁹</sup> &#8260; <sub>x-5</sub>|", "1&frasl;4 ln|<sup>(x+5)⁹</sup> &#8260; <sub>x-3</sub>|", "1&frasl;4 ln|<sup>(x+5)⁷</sup> &#8260; <sub>x-3</sub>|", "1&frasl;4 ln|<sup>(x+3)⁹</sup> &#8260; <sub>x-5</sub>|"]],
-        ["<p>If the rows of a normal matrix A are (6,x,7), (2,1,3) and (7,3,2) then x equals</p>", [2, 7, 6, -6, 0, -2]],
-        ["<p>The the inverse of matrix A, which rows are: (2,2,0), (0,1,0) and (4,2,2), has as second row</p>", ["(0,1,0)","(2,1,0)", "(2,0,0)", "(1,0,0)", "(0,2,0)", "(1,0,2)"]]
+        ["<p>If ax² is the cuadratic value of the taylor expansion of f(x)=e<sup>x</sup>sin(x) with center in 0 then a=</p>", [1, 0, 2, -1, 3, -3]],
+        ["<p>How many not normal subgroups S<sub>3</sub> have? (remember that H subgroup of G is normal iff ghg<sup>-1</sup> belongs to H for all g in G and all h in H)</p>", [3, 2, 1, 0, 4, 5]]
+    ],
+    [/* Section 15 */
+        ["<p>Let p, q, s primes, then which of the next are always irreductible over ℚ</p>" , [ "pqx⁵+s³px²-sq", "s³x⁵+s³x³-s", "pqsx³+p²sx²+s", "sqx⁴-p²x³+p²s", "p⁴x³+psqx+s²q²", "qx⁴+s²x-s²"]],
+        ["<p>Let G group with order 2310, and H subgroup, then H can not be of order</p>", [23, 22, 55, 15, 165, 385]],
+        ["<p>If there not are n and m integers such that nx + my = 1 then x and y can not be</p>", ["3 and 39", "3 and 51", "15 and 55", "21 and 77", "1 and 2", "8 and 782"]],
+        ["<p>If f(x,y)=2y-3x²y² then <font size=5>∫</font><font SIZE=3>f(x,y)dxdy</font> over the region R={(x,y)|0&#60;x&#60;1, 0&#60;y&#60;2} equals</p>" , ["4&frasl;3", "7&frasl;3", 1, "1&frasl;2", "3&frasl;5", "3&frasl;7"]],
+        ["<p>Let f(x,y)=(<sup>xy</sup> &#8260; <sub>x²+y²</sub>), the limit of f(x,y) when (x,y)->(0,0)</p>" , ["Does not exist", "is 0", "is 1&frasl;2", "is 1&frasl;4", 2, "is 4"]]
+    ],
+    [/* Section 16: College */
+        ["<p>The determinant of the matrix with rows: (2,1,2,0), (2,0,1,9), (0,-3,2,1) and (3,4,0,-6) equals</p>", [121, 222, -113, 313, 227, 272]],
+        ["<p>The the inverse of matrix A, which rows are: (2,2,0), (0,1,0) and (4,2,2), has as second row</p>", ["(0,1,0)","(2,1,0)", "(2,0,0)", "(1,0,0)", "(0,2,0)", "(1,0,2)"]],
+        ["<p>If the rows of a normal matrix A are (6,x,7), (2,1,3) and (7,3,2) then x equals (a matrix is normal when AA*=A*A)</p>", [2, 7, 6, -6, 0, -2]],
+        ["<p>Area of the gabriel's horn (surface generated taking the graph of y=<sup>1</sup> &#8260; <sub>x</sub> with domain x>1 and rotating it in three dimensions about the x-axis)</p>", ["∞", "π", "2π", "1", "e<sup>π</sup>", "e"]],
+        ["<p>Volume of the gabriel's horn (surface generated taking the graph of y=<sup>1</sup> &#8260; <sub>x</sub> with domain x>1 and rotating it in three dimensions about the x-axis)</p>", ["π", "∞", "2π", "1", "e", "e<sup>π</sup>"]]
+    ],
+    [/* Section 17 */
+
     ]
 ]
 

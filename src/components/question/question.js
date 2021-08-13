@@ -16,18 +16,11 @@ class Question extends React.Component {
         this.render_order = this.render_order.sort(function() { return Math.random() - 0.5 })
 
         /* When the answer select the correct/wrong answer */
-        this.correct = async (event) => {
+        this.check = async (event, win) => {
             if (this.options === 0) {return};
             this.options -= 1;
-            event.target.classList.add("correct");
+            win ? event.target.classList.add("correct") : event.target.classList.add("wrong");
             this.props.action();
-            await sleep(1000);
-            this.props.next_ques()
-        }
-        this.wrong = async (event) => {
-            if (this.options === 0) {return};
-            this.options -= 1;
-            event.target.classList.add("wrong");
             await sleep(1000);
             this.props.next_ques()
         }
@@ -43,10 +36,10 @@ class Question extends React.Component {
             {this.render_order.map((a, index) => {
                 if (a === this.correct_ans) {
                     return(
-                        <div className="option" onClick={this.correct} dangerouslySetInnerHTML={{__html: "<div class='trap'>"+a+"</div>"}}/>
+                        <div className="option" onClick={(event) => this.check(event, true)} dangerouslySetInnerHTML={{__html: "<div class='trap'>"+a+"</div>"}}/>
                     )}
                 return (
-                    <div className="option" onClick={this.wrong} dangerouslySetInnerHTML={{__html: "<div class='trap'>"+a+"</div>"}}/>
+                    <div className="option" onClick={(event) => this.check(event, false)} dangerouslySetInnerHTML={{__html: "<div class='trap'>"+a+"</div>"}}/>
                 )})}
             </div>
         </div>)}}
