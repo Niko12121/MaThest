@@ -81,7 +81,7 @@ class Test extends React.Component {
         }
         this.points.push(corrects)
         /* If win the section, else not */
-        if (corrects / this.props.many_q >= this.props.requer) {
+        if (corrects >= this.props.requer) {
             /* If it's the end of game, else not */
             if ((actual_sec + 1).toString() === this.props.many_s.toString() && (actual_ques + 1).toString() === this.props.many_q.toString()) {
                 this.giveInfo(true);
@@ -113,7 +113,7 @@ class Test extends React.Component {
         }
         /* t is the info */
         let t = ""
-        t += `You played the math test with <b>${this.props.many_s}</b> sections at <b>${100 * this.props.requer}%</b> of requirement<br>`
+        t += `You played the math test with <b>${this.props.many_s}</b> sections and need <b>${this.props.requer}</b> corrects every section<br>`
         if (this.points.length < this.props.many_s) {t += `But you just get the section <b>${this.points.length}</b><br>`}
         t += `Each section had <b>${this.props.many_s}</b> questions<br>`
         let i = 1;
@@ -122,7 +122,7 @@ class Test extends React.Component {
             t += `Section ${i}: ` + a + "/" + this.props.many_q + "<br>";
             sum += a;
             i++})
-        t += `That give you a total of ${sum}/${this.props.many_s * this.props.many_q} = <b>${Math.round(1000 * sum/(this.props.many_s * this.props.many_q)) / 10}%</b> of precision`
+        t += `That give you a total of ${sum}/${this.points.length * this.props.many_q} = <b>${Math.round(1000 * sum/(this.points.length * this.props.many_q)) / 10}%</b> of precision`
         if (win) {
             t += "<p>¡Congratulations!</p><br>";
         } else {
@@ -133,7 +133,7 @@ class Test extends React.Component {
 
     render () {
         for (let i=0; i < this.props.many_s; i++) {
-            this.sections.push(<Section level={i} next_question={this.next_question} many_q={this.props.many_q} req={-Math.floor(-this.props.requer * this.props.many_q)}/>)}
+            this.sections.push(<Section level={i} next_question={this.next_question} many_q={this.props.many_q} req={this.props.requer}/>)}
         return (
             <div class='app'>
                 <div id="info"></div>

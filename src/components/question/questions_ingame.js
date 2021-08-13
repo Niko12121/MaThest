@@ -117,7 +117,18 @@ export const questions = [
         ["<p>Volume of the gabriel's horn (surface generated taking the graph of y=<sup>1</sup> &#8260; <sub>x</sub> with domain x>1 and rotating it in three dimensions about the x-axis)</p>", ["π", "∞", "2π", "1", "e", "e<sup>π</sup>"]]
     ],
     [/* Section 17 */
-
+        ["<p>min({|G| such that: G group, and G have an element of order 24 and an element of order 25}) equals</p>", [600, 580, 50, 1, 24, 25]],
+        ["<p>Let f(x,y,z)=ln(1+x²+y²+z²), how many critical points have f?</p>", [1, 2, 0, 3, 4, 5]],
+        ["<p>The volume of the solid in first octant, acotated by planes XY, YZ, ZX and 2x+y+z=10 is</p>", ["250&frasl;3", 250, "125&frasl;3", 125, "150&frasl;6", 1]],
+        ["<p>Let p prime then (p−1)!≡x (mod p), then x equals</p>", [-1, 0, 2, 3, 1, 3]],
+        ["<p>The sum of all the inverse of primes</p>", ["diverges", "converges"]]
+    ],
+    [/* Section 18 */
+        ["<p></p>", [,,,,,]],
+        ["<p></p>", [,,,,,]],
+        ["<p></p>", [,,,,,]],
+        ["<p></p>", [,,,,,]],
+        ["<p></p>", [,,,,,]]
     ]
 ]
 

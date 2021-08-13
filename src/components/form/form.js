@@ -4,7 +4,7 @@ import Test from "../test/test";
 import * as cons from '../../constants';
 
 class Form extends React.Component {
-    state = { isready: false, many_ques: 1, many_sec: 1, requer: 0.5 }
+    state = { isready: false, many_ques: 3, many_sec: 18, requer: 2 }
     constructor(props) {
         super(props);
         this.options = []
@@ -17,16 +17,6 @@ class Form extends React.Component {
         }
     }
 
-    ready = () => {
-        let q = parseInt(document.getElementById("questions_value").value);
-        let l = parseInt(document.getElementById("levels_value").value);
-        let r = parseInt(document.getElementById("requirement").value);
-        if (isNaN(r) || r < 0 || r > 100) {
-            alert('¡Requirement must be a number between 0 and 100!')
-        } else {
-            this.setState({ isready: true, many_ques: q, many_sec: l, requer: r/100 })
-        }
-    }
     render() {
         if (this.state.isready) {
             return( <Test many_q={this.state.many_ques} many_s={this.state.many_sec} requer={this.state.requer} /> )
@@ -34,23 +24,26 @@ class Form extends React.Component {
         return (
             <div id="form">
                 <form>
-                    How many <b>sections</b>?<br></br><select id="levels_value">
+                    How many <b>sections</b>?<br></br><select id="levels_value" onChange={(event) => {this.setState({ many_sec: parseInt(event.target.value) })}}>
                         {this.levels.map(a => {
                             if (a === cons.level_value) {
                                 return <option value={a} selected>{a}</option>}
                             return <option value={a}>{a}</option>
                         })}
                     </select><br></br><br></br>
-                    How many questions per section?<br></br><select id="questions_value">
+                    How many questions per section?<br></br><select id="questions_value" onChange={(event) => {this.setState({ many_ques: parseInt(event.target.value), requer: parseInt(event.target.value) - 1 }); console.log(this.state)}}>
                         {this.options.map(a => {
                             if (a === 3) {
                                 return <option value={a} selected>{a}</option>}
                             return <option value={a}>{a}</option>
                         })}
                     </select><br></br><br></br>
-                    % requirement<br></br>(with 0 you will pass every section even if you fail all; with 100 you will need all correct!)<br></br><input type="number" id="requirement" placeholder="Number between 0 and 100" min="0" max="100" step="10"></input><br></br><br></br>
+                    How many question to pass every section<br></br>
+                    <input type="range" min="0" max={this.state.many_ques} value={this.state.requer} id="requirement" onChange={(event) => { this.setState({requer: parseInt(event.target.value)});}}></input><br></br>
+                    You will need <b>{this.state.requer}</b> corrects every section
+                    <br></br><br></br><br></br>
                 </form>
-                <button onClick={this.ready}>Let's play!</button>
+                <button onClick={() => {this.setState({ isready: true })}}>Let's play!</button>
             </div>
         )
     }

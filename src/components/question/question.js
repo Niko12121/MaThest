@@ -20,7 +20,8 @@ class Question extends React.Component {
             if (this.options === 0) {return};
             this.options -= 1;
             win ? event.target.classList.add("correct") : event.target.classList.add("wrong");
-            this.props.action();
+            /* If win, action */
+            win && this.props.action();
             await sleep(1000);
             this.props.next_ques()
         }
