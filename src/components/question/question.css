@@ -42,10 +42,17 @@
     margin: 8px;
     cursor: pointer;
     border-radius: 10px;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
 }
 
 .option:hover { 
-    outline: 4px double #fee
+    box-shadow: 0 0 3pt 2pt #333;
 }
 
 .trap {
@@ -62,7 +69,7 @@
     margin: 0;
     color: white;
     font-weight: bold;
-    outline: none !important;
+    box-shadow: 0 0 3pt 2pt #333;
   }
 
 
@@ -71,7 +78,7 @@
     margin: 0;
     color: white;
     font-weight: bold;
-    outline: none !important;
+    box-shadow: 0 0 3pt 2pt #333;
   }
 
 .showing-q {

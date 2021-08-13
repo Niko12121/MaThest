@@ -20,7 +20,7 @@ export const questions = [
     [/* Section 3 */
         ["<p>16÷2+2</p>", [10, 4, 12, 14, 8, 6]],
         ["<p>13×12+4×2</p>", [164, 160, 80, 82, 156, 182]],
-        ["<p>If a÷(x×b)=y then x =</p>", ["<sup>a×y</sup> &#8260; <sub>b</sub>", "<sup>a×b</sup> &#8260; <sub>y</sub>", "<sup>b×y</sup> &#8260; <sub>a</sub>", "<sup>y</sup> &#8260; <sub>a×b</sub>"]],
+        ["<p>If a÷(x×b)=y then x =</p>", ["<sup>a</sup> &#8260; <sub>y×b</sub>", "<sup>a×b</sup> &#8260; <sub>y</sub>", "<sup>b×y</sup> &#8260; <sub>a</sub>", "<sup>y</sup> &#8260; <sub>a×b</sub>"]],
         ["<p>If y=mx+n then m equals to</p>", ["<sup>y-n</sup> &#8260; <sub>x</sub>","<sup>n-y</sup> &#8260; <sub>x</sub>", "<sup>x-y</sup> &#8260; <sub>n</sub>", "<sup>y</sup> &#8260; <sub>n-x</sub>", "<sup>n</sup> &#8260; <sub>y-x</sub>", "<sup>x</sup> &#8260; <sub>y-n</sub>"]],
         ["<p>16×2+3×2+4</p>", [42, 38, 74, 75, 39, 40]]
     ],
@@ -41,16 +41,16 @@ export const questions = [
     [/* Section 6: Medium */
         ["<p>(x+y)²-(x²-x)² equals to</p>", ["-x⁴ + 2x³ + 2xy + y²", "x⁴ - 4x³ + 2xy + y²", "-x⁴ - 2x³ - 2xy + y²", "x⁴ - 2x² + 2xy + y²", "2x³ + 4xy + y²", "x⁴ + 2xy + y²"]],
         ["<p>If every year had 365 days, and january 1, 2021 is friday, what day is january 1, 1916</p>", [ "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Thursday"]],
-        ["<p>In base 8, 2 × 12 × 297 × 96 × 2890 equals to</p>", [0, 4, 2, 6, 1, 7]],
+        ["<p>In base 8, 2×12×297×96×2890 equals to</p>", [0, 4, 2, 6, 1, 7]],
         ["<p>If a fungi colony duplicate herself every 2 hours and at 14:00hrs had population of 12000, at what hour the colonie had 1500 of population</p>", ["10:00", "18:00", "12:00", "11:00", "8:00", "12:30"]],
         ["<p>If the rect y=x+n intersect once with the paraboll y=ax²+bx+c, what is n?</p>", ["<sup>c - (b-1)²</sup> &#8260; <sub>4a</sub>", "<sup>(8c - b²)</sup> &#8260; <sub>4a</sub>", "(4c² - b(b + a)²", "<sup>(2c - b²)</sup> &#8260; <sub>4a²</sub>", "b² - 4ac", "a² + b + c"]]
     ],
     [/* Section 7 */
         ["<p>Which of the next numbers is not integer</p>", ["<sup>2</sup> &#8260; <sub>0.4⁵</sub>" ,"1,999...", "<sup>1</sup> &#8260; <sub>0.2⁴</sub>", "<sup>0.242424...</sup> &#8260; <sub>0.080808...</sub>", "<sup>-124</sup> &#8260; <sub>2</sub>", "0"]],
         ["<p>How many solution have the equality (x²+2x+1)²=0</p>", [1, 0, -1, 2, 3, 4]],
-        ["<p>Let f a function &#8477; -> &#8477;, if f(q)=0 for all q in &#8474;, then f=0</p>", ["True", "False"]],
+        ["<p>Let f a function &#8477; -> &#8477;, if f(q)=0 for all q in &#8474;, then f=0</p>", ["False", "True"]],
         ["<p>How many natural numbers exist as solution to inequallity 2x²+4x+2 ≤ 8÷x</p>", [1, 0, 2, 3, 4, 5]],
-        ["<p>If i² = -1, then (1 + i) × (1 - i) equals</p>", [2, 0, "i", "2i", 1, -2]]
+        ["<p>If i²=-1, then (1+i)×(1-i) equals</p>", [2, 0, "i", "2i", 1, -2]]
     ],
     [/* Section 8 */
         ["<p>If the distance between (5, 2, 0) and (7, -4, x) is 7, then x can be equal to</p>", [3, 2, 0, 1, -4, 5]],
@@ -69,9 +69,9 @@ export const questions = [
     [/* Section 10 */
         ["<p>If f(x) has inverse in all R then f(x) can not be</p>", ["x²", "x³", "x¹⁷", "x", "x³ + 81", "x + 1"]],
         ["<p>If i have a notebook paper, and i draw n (straight) lines from border to border, what is the smallest number that i need to paint all the paper without adjacents same color regions, no matter the way how i draw the lines</p>", [2, "n²", 3, 4, "n + 1", "n"]],
-        ["sin(135) equals", ["<sup>√2</sup> &#8260; <sub>2</sub>", "<sup>√3</sup> &#8260; <sub>2</sub>", "1", "0", "1&frasl;2", "<sup>√2</sup> &#8260; <sub>5</sub>"]],
-        ["1 < sin(e × x × cos(x²)/x)", ["∅", "[0, ∞)", "[ln(2), ∞)", "(-∞, 0]", "all R", "[2π, ∞)"]],
-        ["When n tends to ∞, (1 + 1/n)<sup>2n</sup> tends to", ["e²", "ln(2)", "sin(2)", "e", "ln(2)²", "1"]]
+        ["<p>sin(135) equals</p>", ["<sup>√2</sup> &#8260; <sub>2</sub>", "<sup>√3</sup> &#8260; <sub>2</sub>", "1", "0", "1&frasl;2", "<sup>√2</sup> &#8260; <sub>5</sub>"]],
+        ["<p>1 < sin(e × x × cos(x²)/x)</p>", ["∅", "[0, ∞)", "[ln(2), ∞)", "(-∞, 0]", "all R", "[2π, ∞)"]],
+        ["<p>When n tends to ∞, (1 + 1/n)<sup>2n</sup> tends to</p>", ["e²", "ln(2)", "sin(2)", "e", "ln(2)²", "1"]]
     ],
     [/* Section 11: College introduction */
         ["<p>Let a, b, c digits such that a + b + c = 7, none = 0, then which is not divisble by 3</p>", ["a6c7b3", "3b3c2a0", "1c1ba0", "(abc) + 2", "1c0b0a1", 900]],
@@ -133,16 +133,16 @@ export const questions = [
     [/* Section 19 */
         ["<p>In l¹ metric space (the space of sequences whose series is absolutely convergent), K={(a<sub>i</sub>): |a<sub>i</sub>|≤2<sup>-i</sup>} is compact?</p>", ["True", "False"]],
         ["<p>Let F close, then the boundary of F:<br>a) is close<br>b) has interior ≠ ∅</p>", ["only a", "only b", "a and b", "none"]],
-        ["<p>How many intermediate field there are between Q and Q(√2,√3) (not counting itselfs)</p>", [3, 2, 1, 0, 4, 5]],
+        ["<p>How many intermediate field there are between ℚ and ℚ(√2,√3) (not counting itselfs)</p>", [3, 2, 1, 0, 4, 5]],
         ["<p>Let P a regular constructible polygon with n sides, then n can not be</p>", [7, 3, 4, 17, 12, 8]],
         ["<p>The legth of a cycloid (curve generated by a point on the circumference that rolls along axis x) with radius 2 and one arch is</p>", [16, 8, 4, "8π", "4π", "π"]]
     ],
     [/* Section 20 */
-        ["<p></p>", [,,,,,]],
-        ["<p></p>", [,,,,,]],
-        ["<p></p>", [,,,,,]],
-        ["<p></p>", [,,,,,]],
-        ["<p></p>", [,,,,,]]
+        ["<p>How many integers there for whose x²+2x+2 is the cube of some integer</p>", [1, 2, 0, 3, 4, 5]],
+        ["<p>How many non-Noetherians sub-rings of ℚ there are?</p>", [0, 1, 2, 3, 4, "∞"]],
+        ["<p>Let S surface defined by x(u,v)=(cos(u)√2,2v+sin(u),2v-sin(u), with 0&#60;u&#60;2π, then E+F+G (sum of first fundamental form coefficients) equals</p>", ["9+cos²(u)", 0, "1+sin²(u)", 1, "9+sin²(u)", 9]],
+        ["<p>Let S a surface homeomorphic to a torus, then S has euler characteristic equals</p>", [0, 2, -2, -4, -6, 4]],
+        ["<p>Let 2 close and simple geodesics in a compact and convex surface with positive curvature, then these always intersect</p>", ["True", "False"]]
     ]
 ]
 

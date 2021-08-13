@@ -4,7 +4,7 @@ import Test from "../test/test";
 import * as cons from '../../constants';
 
 class Form extends React.Component {
-    state = { isready: false, many_ques: 3, many_sec: 18, requer: 2 }
+    state = { isready: false, many_ques: 3, many_sec: 20, requer: 2 }
     constructor(props) {
         super(props);
         this.options = []
