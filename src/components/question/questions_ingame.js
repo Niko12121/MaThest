@@ -68,7 +68,7 @@ export const questions = [
     ],
     [/* Section 10 */
         ["<p>If f(x) has inverse in all R then f(x) can not be</p>", ["x²", "x³", "x¹⁷", "x", "x³ + 81", "x + 1"]],
-        ["<p>If i have a notebook paper, and i draw n (straight) lines from border to border, what is the smallest number that i need to paint all the paper without adjacents same color regions, no matter the way how i draw the lines</p>", [2, "n²", 3, 4, "n + 1", "n"]],
+        ["<p>If i have a notebook paper, and i draw n (straight) lines from border to border, what is the smallest number of colors that i need to paint all the paper without adjacents same color regions, no matter the way how i draw the lines</p>", [2, "n²", 3, 4, "n + 1", "n"]],
         ["<p>sin(135) equals</p>", ["<sup>√2</sup> &#8260; <sub>2</sub>", "<sup>√3</sup> &#8260; <sub>2</sub>", "1", "0", "1&frasl;2", "<sup>√2</sup> &#8260; <sub>5</sub>"]],
         ["<p>1 < sin(e × x × cos(x²)/x)</p>", ["∅", "[0, ∞)", "[ln(2), ∞)", "(-∞, 0]", "all R", "[2π, ∞)"]],
         ["<p>When n tends to ∞, (1 + 1/n)<sup>2n</sup> tends to</p>", ["e²", "ln(2)", "sin(2)", "e", "ln(2)²", "1"]]
@@ -91,7 +91,7 @@ export const questions = [
     [/* Section 13 */
         ["<p>If f(x)=tan(x) then <font size=5>∫</font><font SIZE=3>f(x)dx</font> equals c + </p>", ["ln|sec(x)|", "ln|sin(x)|", "ln(e<sup>tan(x)</sup>)", "ln|csc(x)|", "sin(ln(x))", "cos(ln(x))"]],
         ["<p>If a<sub>n</sub>=1+½+¼+...+<sup>1</sup> &#8260; <sub>2<sup>n</sup></sub>, then when n->∞, a<sub>n</sub> tends to</p>", [2, 1, "e", "e-1", "3&frasl;2", 3]],
-        ["<p>Serie of a<sub>n</sub> (a<sub>1</sub>+a<sub>2</sub>+...) converge if a<sub>n</sub>=<br>1) -1<sup>n</sup> n<sup>-1</sup><br>2) cos(<sup>1</sup> &#8260; <sub>n</sub>)<br>3) <sup>sin(e)<sup>n</sup></sup> &#8260; <sub>2<sup>n</sup></sub>; then in order, 1, 2, 3:</p>", ["conv, div, conv", "conv, div, div", "div, div, conv", "conv, conv, conv", "div, div, div", "conv, conv, div"]],
+        ["<p>Which of the next sucession has serie (a<sub>1</sub>+a<sub>2</sub>+...) convergent:<br>1) a<sub>n</sub>=-1<sup>n</sup> n<sup>-1</sup><br>2) a<sub>n</sub>=cos(<sup>1</sup> &#8260; <sub>n</sub>)<br>3) a<sub>n</sub>=<sup>sin(e)<sup>n</sup></sup> &#8260; <sub>2<sup>n</sup></sub>; then in order, 1, 2, 3:</p>", ["only 1 and 3", "only 1", "only 3", "1, 2 and 3", "None", "only 1 and 2"]],
         ["<p>(2+(2+(2+...)<sup>1&frasl;2</sup>)<sup>1&frasl;2</sup>)<sup>1&frasl;2</sup> tends to</p>", [2, "ln(2)", "e", "<sup>1+√5</sup> &#8260; <sub>2</sub>", 2, 4]],
         ["<p>Let v=(1,8,-2) and ℼ the plane defined by x-2y+z+1=0, both in ℝ³ then distance from v to ℼ equals</p>" , ["<sup>16</sup> &#8260; <sub>√5</sub>", "<sup>9</sup> &#8260; <sub>√5</sub>", "<sup>16</sup> &#8260; <sub>√3</sub>", "<sup>9</sup> &#8260; <sub>√3</sub>", "<sup>16</sup> &#8260; <sub>√7</sub>", "<sup>9</sup> &#8260; <sub>√7</sub>"]]
     ],
@@ -140,7 +140,7 @@ export const questions = [
     [/* Section 20 */
         ["<p>How many integers there for whose x²+2x+2 is the cube of some integer</p>", [1, 2, 0, 3, 4, 5]],
         ["<p>How many non-Noetherians sub-rings of ℚ there are?</p>", [0, 1, 2, 3, 4, "∞"]],
-        ["<p>Let S surface defined by x(u,v)=(cos(u)√2,2v+sin(u),2v-sin(u), with 0&#60;u&#60;2π, then E+F+G (sum of first fundamental form coefficients) equals</p>", ["9+cos²(u)", 0, "1+sin²(u)", 1, "9+sin²(u)", 9]],
+        ["<p>Let S surface defined by x(u,v)=(cos(u)√2,2v+sin(u),2v-sin(u)), with 0&#60;u&#60;2π, then E+F+G (sum of first fundamental form coefficients) equals</p>", ["9+cos²(u)", 0, "1+sin²(u)", 1, "9+sin²(u)", 9]],
         ["<p>Let S a surface homeomorphic to a torus, then S has euler characteristic equals</p>", [0, 2, -2, -4, -6, 4]],
         ["<p>Let 2 close and simple geodesics in a compact and convex surface with positive curvature, then these always intersect</p>", ["True", "False"]]
     ]
