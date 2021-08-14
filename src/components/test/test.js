@@ -40,11 +40,13 @@ class Section extends React.Component {
 
     render() {
         /*the first question is manually renderized*/
-        var cls = "section sec-"+this.props.level;
+        var cls = "section sec-" + this.props.level;
+        var showcount = "counting"
+        if (this.props.level.toString() === "0") {showcount += " showing-count"}
         if (this.props.level.toString() === "0") {cls += " showing-sec"}
         return(
             <div className={cls}>
-                <div class='counting'><div class="section-info" id="info-sec">Section {this.props.level + 1}/{cons.level_value}</div><div class="section-info" id="info-ques">Question: {this.state.question}/{this.props.many_q}</div><div class="section-info" id="info-corr">Corrects: {this.state.points}/{this.props.req}</div></div>
+                <div class={showcount} id={"count"+this.props.level}><div class="section-info" id="info-sec">Section {this.props.level + 1}/{cons.level_value}</div><div class="section-info" id="info-ques">Question: {this.state.question}/{this.props.many_q}</div><div class="section-info" id="info-corr">Corrects: {this.state.points}/{this.props.req}</div></div>
                 {this.questions.map(a => {
                     return a
                 })}
@@ -84,13 +86,30 @@ class Test extends React.Component {
         if (corrects >= this.props.requer) {
             /* If it's the end of game, else not */
             if ((actual_sec + 1).toString() === this.props.many_s.toString() && (actual_ques + 1).toString() === this.props.many_q.toString()) {
+                document.getElementById("explain-maj").style.opacity = 0.3
                 this.giveInfo(true);
                 return}
             /* Showing the next section */
             let actsec = document.getElementsByClassName('showing-sec')[0];
+            let actcount = document.getElementsByClassName("showing-count")[0]
+            /* next is the number of the section that will be render */
+            let next = parseInt(actsec.classList[1].split('-')[1]) + 1;
+            /* opacity of information boxes */
+            if (next === 5) {
+                document.getElementById("explain-basic").style.opacity = 0.3;
+                document.getElementById("explain-int").style.opacity = 0.7}
+            else if (next === 10) {
+                document.getElementById("explain-int").style.opacity = 0.3;
+                document.getElementById("explain-coll").style.opacity = 0.7}
+            else if (next === 15) {
+                document.getElementById("explain-coll").style.opacity = 0.3;
+                document.getElementById("explain-maj").style.opacity = 0.7}
+            actcount.classList.remove("showing-count")
             actsec.classList.remove('showing-sec')
-            let sigsec = document.getElementsByClassName('sec-' + (parseInt(actsec.classList[1].split('-')[1]) + 1).toString())[0]
+            let sigsec = document.getElementsByClassName('sec-' + next.toString())[0]
+            let sigcount = document.getElementById("count" + next.toString());
             sigsec.className += ' showing-sec';
+            sigcount.className += " showing-count"
             /* Showing the first question of the new section */
             si += (actual_sec + 1).toString() + '-0';
             let sig = document.getElementsByClassName(si)[0];

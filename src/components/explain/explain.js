@@ -3,13 +3,12 @@ import './explain.css';
 
 class Explain extends React.Component {
     render() {
-        return <div id="explain"><p id="explain-text">Sections distribution:<br></br><br></br><table id="explain-table">
-            <tr><th>Sections</th><th>Level</th></tr>
-            <tr><td>1-5</td><td>Basic math education</td></tr>
-            <tr><td>6-10</td><td>Medium math education</td></tr>
-            <tr><td>11-15</td><td>College-introduction math education</td></tr>
-            <tr><td>16-20</td><td>College math education</td></tr>
-            </table></p></div>
+        return <div id="explain">
+            <div class="sec-explain" id="explain-basic">Basic<br></br>Section 1 to Section 5</div>
+            <div class="sec-explain" id="explain-int">Medium<br></br>Section 6 to Section 10</div>
+            <div class="sec-explain" id="explain-coll">College<br></br>Section 11 to Section 15</div>
+            <div class="sec-explain" id="explain-maj">Math Major<br></br>Section 16 to Section 20</div>
+        </div>
     }
 }
 

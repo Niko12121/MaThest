@@ -4,19 +4,47 @@
     top: 20%;
     height: 40vh;
     width: 60vw;
-    opacity: 0.9;
     max-width: 550px;
     min-width: 300px;
     left: 50%;
     transform: translate(-50%, 0);
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
 }
 
 
 .counting {
-    display: flex;
-    background-color: #fee;
-    border-radius: 10px;
+    display: none;
+    background-color: yellowgreen;
+    border: solid yellowgreen 5px;
     margin-bottom: 20px;
+    opacity: 0.7;
+    cursor: default;
+}
+
+.showing-count {
+    display: flex;
+}
+
+#count5, #count6, #count7, #count8, #count9 {
+    background-color: orange;
+    border: solid orange 5px;
+}
+
+#count10, #count11, #count12, #count13, #count14 {
+    background-color: purple;
+    border: solid purple 5px;;
+    color: white;
+}
+
+#count15, #count16, #count17, #count18, #count19 {
+    background-color: black;
+    border: solid black 5px;
+    color: white
 }
 
 .showing-sec {
@@ -25,11 +53,7 @@
 
 #info {
     display: none;
-    position: absolute;
     background: transparent;
-    width: 100%;
-    height: calc(100% + 40px);
-    top: 100px;
     text-align: center;
     z-index: -1;
 }
