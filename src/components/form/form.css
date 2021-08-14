@@ -1,5 +1,6 @@
 #form {
-    position: absolute;
+    position: relative;
+    display: inline-block;
     top: 30%;
     text-align: center;
     left: 50%;

@@ -1,20 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Header from "./components/header/header";
+import Form from "./components/form/form";
+import Explain from "./components/explain/explain";
 
-
-class TodoApp extends React.Component {
-
-  
-  render() {
-    return (
-      <App />)
-    }
+function App() {
+  let squares = [];
+  for (let i = 0; i<25; i++) {
+      squares.push(i)
+  }
+  return (
+    <React.Fragment>
+      <Header />
+      <Explain />
+      <Form />
+      <ul class="background">
+        {squares.map(a => {
+          return (<li class="square">{a}</li>)}
+          )}
+      </ul>
+    </React.Fragment>
+  );
 }
 
-
-ReactDOM.render(<TodoApp />, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
 
 reportWebVitals();

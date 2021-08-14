@@ -6,33 +6,34 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    min-height: 155px;
+    height: 175px;
     border-radius: 10px;
 }
 
 .real-question {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .answers-options {
     display: grid;
     grid-template-columns: repeat(2, 50%);
-    height: calc(100% - 50px);
+    margin-bottom: 100px;
 }
 
 .section {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 20px);
 }
 
 .option {
     display: flex;
+    height: 40px;
     align-items: center;
     justify-content: center;
     color: black;
@@ -42,7 +43,6 @@
     margin: 8px;
     cursor: pointer;
     border-radius: 10px;
-
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -66,8 +66,8 @@
 
 .correct {
     background-color: green;
-    margin: 0;
     color: white;
+    transform: scale(1.1);
     font-weight: bold;
     box-shadow: 0 0 3pt 2pt #333;
   }
@@ -75,8 +75,8 @@
 
 .wrong {
     background-color: red;
-    margin: 0;
     color: white;
+    transform: scale(1.1);
     font-weight: bold;
     box-shadow: 0 0 3pt 2pt #333;
   }

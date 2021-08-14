@@ -1,24 +1,22 @@
 .app {
     display: inline-block;
-    position: absolute;
-    left: 30%;
+    position: relative;
     top: 20%;
     height: 40vh;
-    width: 40vw;
-    max-height: 270px;
-    min-height: 155px;
+    width: 60vw;
     opacity: 0.9;
+    max-width: 550px;
+    min-width: 300px;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 
 .counting {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
     background-color: #fee;
     border-radius: 10px;
-    width: 40vw;
+    margin-bottom: 20px;
 }
 
 .showing-sec {

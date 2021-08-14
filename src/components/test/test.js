@@ -44,9 +44,9 @@ class Section extends React.Component {
         if (this.props.level.toString() === "0") {cls += " showing-sec"}
         return(
             <div className={cls}>
-                <div class='counting'><div class="section-info" id="info-sec">Section {this.props.level + 1}</div><div class="section-info" id="info-ques">Question: {this.state.question}/{this.props.many_q}</div><div class="section-info" id="info-corr">Corrects: {this.state.points}/{this.props.req}</div></div><br></br><br></br>
+                <div class='counting'><div class="section-info" id="info-sec">Section {this.props.level + 1}/{cons.level_value}</div><div class="section-info" id="info-ques">Question: {this.state.question}/{this.props.many_q}</div><div class="section-info" id="info-corr">Corrects: {this.state.points}/{this.props.req}</div></div>
                 {this.questions.map(a => {
-                    return <div>{a}</div>
+                    return a
                 })}
             </div>
             )

@@ -1,15 +1,13 @@
 #explain {
     position: relative;
     display: block;
-    top: 100vh;
     text-align: center;
     padding-bottom: 10px;
 }
 
 
 #explain-text {
-    padding-left: 30%;
-    padding-right: 30%;
+    margin-top: 50px;
     text-align: center;
     font-size: 15px;
     opacity: 0.5;
