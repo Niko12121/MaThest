@@ -1,7 +1,6 @@
 import React from 'react';
-import './form.css';
-import Test from "../test/test";
-import * as cons from '../../constants';
+import Test from "./test";
+import * as cons from '../constants';
 
 class Form extends React.Component {
     state = { isready: false, many_ques: 3, requer: 2 }

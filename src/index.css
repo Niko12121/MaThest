@@ -7,6 +7,235 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Explain */
+#explain {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: 100px;
+  text-align: center;
+  padding-top: 25px;
+  justify-content: center;
+  column-gap: 20px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+#basic {
+  background-color: yellowgreen;
+}
+
+#int {
+  background-color: orange;
+}
+
+#coll {
+  background-color: purple;
+  color: white;
+}
+
+#maj {
+  background-color: black;
+  color: white;
+}
+
+#form {
+  position: relative;
+  display: inline-block;
+  top: 30%;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #ffffff44;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+}
+
+.header p {
+  font-size: 20px;
+}
+
+/* Question */
+
+.question {
+  display: none;
+  position: absolute;
+  color: black;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  height: 175px;
+  border-radius: 10px;
+}
+
+.real-question {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.answers-options {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  margin-bottom: 100px;
+}
+
+.section {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 20px);
+}
+
+.option {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  background-color: #fee;
+  text-align: center;
+  transition: 0.3s;
+  margin: 8px;
+  cursor: pointer;
+  border-radius: 10px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+.option:hover { 
+  box-shadow: 0 0 3pt 2pt #333;
+}
+
+.trap {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+.correct {
+  background-color: green;
+  color: white;
+  transform: scale(1.1);
+  font-weight: bold;
+  box-shadow: 0 0 3pt 2pt #333;
+}
+
+
+.wrong {
+  background-color: red;
+  color: white;
+  transform: scale(1.1);
+  font-weight: bold;
+  box-shadow: 0 0 3pt 2pt #333;
+}
+
+.showing-q {
+  display: inherit;
+}
+
+/* Test */
+
+.app {
+  display: inline-block;
+  position: relative;
+  top: 20%;
+  height: 40vh;
+  width: 60vw;
+  max-width: 550px;
+  min-width: 300px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+
+.counting {
+  display: none;
+  background-color: yellowgreen;
+  border: solid yellowgreen 5px;
+  margin-bottom: 20px;
+  opacity: 0.7;
+  cursor: default;
+}
+
+.showing-count {
+  display: flex;
+}
+
+#count5, #count6, #count7, #count8, #count9 {
+  background-color: orange;
+  border: solid orange 5px;
+}
+
+#count10, #count11, #count12, #count13, #count14 {
+  background-color: purple;
+  border: solid purple 5px;;
+  color: white;
+}
+
+#count15, #count16, #count17, #count18, #count19 {
+  background-color: black;
+  border: solid black 5px;
+  color: white
+}
+
+.showing-sec {
+  z-index: 10
+}
+
+#info {
+  display: none;
+  background: transparent;
+  text-align: center;
+  z-index: -1;
+}
+
+.section-info {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 12px;
+}
+
+#info-sec {
+  padding-left: 10px;
+  float: left;
+}
+
+#info-ques {
+  margin:0 auto
+}
+
+#info-corr {
+  padding-right: 10px;
+  float: right;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

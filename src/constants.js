@@ -1,4 +1,4 @@
-import questions from "./components/question/questions_ingame";
+import questions from "./questions_ingame";
 
 /* How many questions per section will the page render */
 export const amount_value = 2;

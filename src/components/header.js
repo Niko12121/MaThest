@@ -1,9 +1,7 @@
-import './header.css'
-
 const Header = () => {
     return (
         <header class='header'>
-            <p>LOGO</p>
+            <p>ℝeal Test</p>
         </header>
         
     )

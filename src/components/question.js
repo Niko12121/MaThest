@@ -1,6 +1,5 @@
 import React from "react"
-import "./question.css"
-import questions from "./questions_ingame"
+import questions from "../questions_ingame"
 
 /*sleep the code ms miliseconds*/
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
