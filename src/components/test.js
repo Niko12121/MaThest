@@ -1,7 +1,7 @@
 import React from "react";
 import Explain from "./explain"
 import Question from "./question"
-import * as cons from '../constants';
+import * as cons from "../constants";
 
 
 /* This function return a list with amount elements, whit different randoms whole numbers 
@@ -52,9 +52,9 @@ class Test extends React.Component {
             if (this.state.corrects < this.props.requer) {
                 this.setState({ finished: true, explain: 4 })}
             else {
-                this.setState({ section: this.state.section + 1, question: 0, corrects: 0 })
+                /* Is the end of the test? */
+                this.state.section === 19 ? this.setState({ finished: true, win: true }) : this.setState({ section: this.state.section + 1, question: 0, corrects: 0 })
                 this.state.section % 5 === 0 && this.setState({ explain: this.state.explain + 1 })
-                this.state.section === 20 && this.setState({ finished: true, win: true })
             }
         }
     }
@@ -75,10 +75,10 @@ class Test extends React.Component {
                 ) : (
                     <p>Try again</p>
                 )}</b><br></br>
-                <button type='button' onclick='window.location.reload()'>Play again</button></div>
+                <button type="button" onClick={() => {window.location.reload()}}>Play again</button></div>
         }
         return (
-            <div class='app'>
+            <div class="app">
                 <Explain explain={ this.state.explain }/>
                 <div class="counting" style={{ 
                     backgroundColor: this.colors[Math.floor(this.state.section / 5)][0], 

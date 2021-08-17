@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import Test from "./test";
-import * as cons from '../constants';
+import * as cons from "../constants";
 
 class Form extends React.Component {
     state = { isready: false, many_ques: 3, requer: 2 }
@@ -36,7 +36,7 @@ class Form extends React.Component {
                     You will need <b>{this.state.requer}</b> corrects every section
                     <br></br><br></br><br></br>
                 </form>
-                <button onClick={() => {this.setState({ isready: true })}}>Let's play!</button>
+                <button onClick={() => {this.setState({ isready: true })}}>Let"s play!</button>
             </div>
         )
     }

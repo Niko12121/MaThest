@@ -35,7 +35,7 @@ export const questions = [
         ["<p>The area of the triangle formed by axis and the line given by y=8x+1 is</p>", ["1&frasl;16", "16", "1", "-1&frasl;16", "16&frasl;3", "8"]],
         ["<p>Which of the next numbers is not a perfect square</p>", [182767, 277729, 285156, 180625, 194481, 237169]],
         ["<p>i²⁴+i⁹ equals</p>", ["1+i", "i", 1, 0, -1, "1-i"]],
-        ["<p>If an square has angles 13x, 12x, 8x, 12x degrees then x equals to</p>", [8, 12, 22, 7, 9, 1]],
+        ["<p>If the sum of interior angles of a square is 45 degrees degrees then x equals to</p>", [8, 12, 22, 7, 9, 1]],
         ["<p>(x+y)²-(x²-x)² equals to</p>", ["-x⁴ + 2x³ + 2xy + y²", "x⁴ - 4x³ + 2xy + y²", "-x⁴ - 2x³ - 2xy + y²", "x⁴ - 2x² + 2xy + y²", "2x³ + 4xy + y²", "x⁴ + 2xy + y²"]]
     ],
     [/* Section 6: Medium */
