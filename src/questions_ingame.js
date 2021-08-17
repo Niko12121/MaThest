@@ -28,29 +28,29 @@ export const questions = [
         ["<p>What is the area of a triangle in the plane with vertices in [0,2], [7,12] and [0,8]</p>", [21, 44, 73, 12, 18, 19]],
         ["<p>What is the multiplicative inverse of the slope of the rect defined by y=3x+7</p>", ["1&frasl;3", "3", "7", "1&frasl;7", "1", "3&frasl;7"]],
         ["<p>Which of the next numbers is not prime</p>", [7296, 7723, 6047, 5653, 6143, 5647]],
-        ["<p>what is the last digit of 35632⋅12411⋅12779</p>", [8, 7, 4, 3, 1, 9]],
+        ["<p>Which is the last digit of 35632⋅12411⋅12779</p>", [8, 7, 4, 3, 1, 9]],
         ["<p>If a is odd and b is even, the expression a⋅b+(a-b) can't be equal to</p>", [1282, 1241, 7867, 269, 311, 22901]]
     ],
     [/* Section 5: */
         ["<p>The area of the triangle formed by axis and the line given by y=8x+1 is</p>", ["1&frasl;16", "16", "1", "-1&frasl;16", "16&frasl;3", "8"]],
         ["<p>Which of the next numbers is not a perfect square</p>", [182767, 277729, 285156, 180625, 194481, 237169]],
-        ["<p>i²⁴+i⁹ equals</p>", [-8, 12, -12, -21, -18, 0]],
+        ["<p>i²⁴+i⁹ equals</p>", ["1+i", "i", 1, 0, -1, "1-i"]],
         ["<p>If an square has angles 13x, 12x, 8x, 12x degrees then x equals to</p>", [8, 12, 22, 7, 9, 1]],
-        ["<p>(x+y)²-(x²-x)² equals to</p>", [20100, 19800, 10900, 7900, 21100, 10200]]
+        ["<p>(x+y)²-(x²-x)² equals to</p>", ["-x⁴ + 2x³ + 2xy + y²", "x⁴ - 4x³ + 2xy + y²", "-x⁴ - 2x³ - 2xy + y²", "x⁴ - 2x² + 2xy + y²", "2x³ + 4xy + y²", "x⁴ + 2xy + y²"]]
     ],
     [/* Section 6: Medium */
-        ["<p>The sum of the first 200 natural numbers equals to</p>", ["-x⁴ + 2x³ + 2xy + y²", "x⁴ - 4x³ + 2xy + y²", "-x⁴ - 2x³ - 2xy + y²", "x⁴ - 2x² + 2xy + y²", "2x³ + 4xy + y²", "x⁴ + 2xy + y²"]],
+        ["<p>The sum of the first 200 natural numbers equals to</p>", [20100, 19800, 10900, 7900, 21100, 10200]],
         ["<p>If every year had 365 days, and january 1, 2021 is friday, what day is january 1, 1916</p>", [ "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Thursday"]],
         ["<p>In base 8, 2⋅12⋅297⋅96⋅2890 equals to</p>", [0, 4, 2, 6, 1, 7]],
         ["<p>If a fungi colony duplicate herself every 2 hours and at 14:00hrs had population of 12000, at what hour the colonie had 3000 of population</p>", ["10:00", "18:00", "12:00", "11:00", "8:00", "12:30"]],
-        ["<p>If i²=-1, then (1+i)⋅(1-i) equals</p>", ["<sup>c - (b-1)²</sup> &#8260; <sub>4a</sub>", "<sup>(8c - b²)</sup> &#8260; <sub>4a</sub>", "(4c² - b(b + a)²", "<sup>(2c - b²)</sup> &#8260; <sub>4a²</sub>", "b² - 4ac", "a² + b + c"]]
+        ["<p>If i²=-1, then (1+i)⋅(1-i) equals</p>", [2, 0, "i", "2i", 1, -2]]
     ],
     [/* Section 7 */
         ["<p>Which of the next numbers is not integer</p>", ["<sup>2</sup> &#8260; <sub>0.4⁵</sub>" ,"1,999...", "<sup>1</sup> &#8260; <sub>0.2⁴</sub>", "<sup>0.242424...</sup> &#8260; <sub>0.080808...</sub>", "<sup>-124</sup> &#8260; <sub>2</sub>", "0"]],
         ["<p>How many solution have the equality (x²+2x+1)²=0</p>", [1, 0, -1, 2, 3, 4]],
         ["<p>Let f a function &#8477; -> &#8477;, if f(q)=0 for all q in &#8474;, then f=0</p>", ["False", "True"]],
         ["<p>How many natural numbers exist as solution to inequallity 2x²+4x+2 ≤ 8÷x</p>", [1, 0, 2, 3, 4, 5]],
-        ["<p>If the rect y=x+n intersect once with the paraboll y=ax²+bx+c, what is n?</p>", [2, 0, "i", "2i", 1, -2]]
+        ["<p>If the rect y=x+n intersect once with the paraboll y=ax²+bx+c, what is n?</p>", ["<sup>c - (b-1)²</sup> &#8260; <sub>4a</sub>", "<sup>(8c - b²)</sup> &#8260; <sub>4a</sub>", "(4c² - b(b + a)²", "<sup>(2c - b²)</sup> &#8260; <sub>4a²</sub>", "b² - 4ac", "a² + b + c"]]
     ],
     [/* Section 8 */
         ["<p>If the distance between (5, 2, 0) and (7, -4, x) is 7, then x can be equal to</p>", [3, 2, 0, 1, -4, 5]],
@@ -64,7 +64,7 @@ export const questions = [
         ["<p>If a circle has diameter x cm. and area x cm.², then x equals to</p>", [2, 0, 1, "π", 4, 6]],
         ["<p>How many different anagram exist (not necessarily meaningful) of the word 'revenge'</p>", [840, 720, 5040, 72, 1024, 640]],
         ["<p>If |4-2x| > 8 then</p>", ["x < -2 or x > 6", "x < -2 and x > 6", "x < 2", "x < 2 and x > -6", "x > 2 and x < 6", "x > 2 or x < 6"]],
-        ["<p>Let (a,b) the vertex of the graph given by x²+4x-2, then a+b equals to</p>", ["1+i", "i", 1, 0, -1, "1-i"]]
+        ["<p>Let (a,b) the vertex of the graph given by x²+4x-2, then a+b equals to</p>", [-8, 12, -12, -21, -18, 0]]
     ],
     [/* Section 10 */
         ["<p>If f(x) has inverse in all R then f(x) can't be</p>", ["x²", "x³", "x¹⁷", "x", "x³ + 81", "x + 1"]],
@@ -74,7 +74,7 @@ export const questions = [
         ["<p>When n tends to ∞, (1 + 1/n)<sup>2n</sup> tends to</p>", ["e²", "ln(2)", "sin(2)", "e", "ln(2)²", "1"]]
     ],
     [/* Section 11: College introduction */
-        ["<p>Let a, b, c digits such that a + b + c = 7, none = 0, then which is not divisble by 3</p>", ["a6c7b3", "3b3c2a0", "1c1ba0", "(abc) + 2", "1c0b0a1", 900]],
+        ["<p>Let a, b, c DIGITS such that a + b + c = 7, none = 0, then which is not divisble by 3</p>", ["a6c7b3", "3b3c2a0", "1c1ba0", "(abc) + 2", "1c0b0a1", 900]],
         ["<p>Let n natural, and p, q primes, then if n² = p⋅q then always</p>", ["n is prime", "p > q or p < q", "n is not prime", "n > 4"]],
         ["<p>{0, 1} as a field with classic + and ⋅ opperations then in this context</p>", ["√-1 = 1", "0 = 1", "1 + 1 = 1", "√0 = 1", "0 ⋅ 1 = 1", "0 + 0 = 1"]],
         ["<p>In ℤ<sub>6</sub> we have (for all p and q in ℤ<sub>6</sub>)</p>", ["3p ⋅ 4q = 0", "6p + 6q = 5pq", "p + q = p + 6", "3q = 3p", "3p = 6q", "2 = 7"]],

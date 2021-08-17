@@ -12,7 +12,7 @@ body {
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 100px);
-  grid-template-rows: 100px;
+  grid-template-rows: 70px;
   text-align: center;
   padding-top: 25px;
   justify-content: center;
@@ -66,18 +66,6 @@ body {
 
 /* Question */
 
-.question {
-  display: none;
-  position: absolute;
-  color: black;
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  height: 175px;
-  border-radius: 10px;
-}
-
 .real-question {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
@@ -91,12 +79,6 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 50%);
   margin-bottom: 100px;
-}
-
-.section {
-  position: absolute;
-  width: 100%;
-  height: calc(100% - 20px);
 }
 
 .option {
@@ -149,9 +131,6 @@ body {
   box-shadow: 0 0 3pt 2pt #333;
 }
 
-.showing-q {
-  display: inherit;
-}
 
 /* Test */
 
@@ -159,10 +138,8 @@ body {
   display: inline-block;
   position: relative;
   top: 20%;
-  height: 40vh;
-  width: 60vw;
-  max-width: 550px;
-  min-width: 300px;
+  height: 500px;
+  width: 550px;
   left: 50%;
   transform: translate(-50%, 0);
   -webkit-touch-callout: none; /* iOS Safari */
@@ -173,57 +150,30 @@ body {
   user-select: none;
 }
 
-
-.counting {
-  display: none;
-  background-color: yellowgreen;
-  border: solid yellowgreen 5px;
-  margin-bottom: 20px;
-  opacity: 0.7;
-  cursor: default;
-}
-
-.showing-count {
+.counting  {
   display: flex;
-}
-
-#count5, #count6, #count7, #count8, #count9 {
-  background-color: orange;
-  border: solid orange 5px;
-}
-
-#count10, #count11, #count12, #count13, #count14 {
-  background-color: purple;
-  border: solid purple 5px;;
-  color: white;
-}
-
-#count15, #count16, #count17, #count18, #count19 {
-  background-color: black;
-  border: solid black 5px;
-  color: white
-}
-
-.showing-sec {
-  z-index: 10
+  height: 35px;
+  align-items: center;
+  margin-bottom: 20px;
+  opacity: 0.8;
+  cursor: default;
+  transition: 0.5s;
 }
 
 #info {
-  display: none;
   background: transparent;
   text-align: center;
   z-index: -1;
 }
 
 .section-info {
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding: 5px;
   font-size: 12px;
 }
 
 #info-sec {
-  padding-left: 10px;
-  float: left;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 #info-ques {
@@ -235,11 +185,26 @@ body {
   float: right;
 }
 
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media screen and (max-width: 600px) {
+  .app {
+    width: 400px;
+  }
+  #explain {
+    grid-template-columns: repeat(4, 70px);
+    column-gap: 35px
+  }
 }
+
+@media screen and (max-width: 420px) {
+  .app {
+    width: 300px;
+  }
+  #explain {
+    grid-template-columns: repeat(4, 50px);
+    column-gap: 25px
+  }
+}
+
 
 /* Background, all credits to: Mohammad Abdul Mohaiman */
 

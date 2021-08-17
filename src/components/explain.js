@@ -1,7 +1,6 @@
 import React from 'react';
 
 class Explain extends React.Component {
-    state = {show: -1}
     constructor(props) {
         super(props);
         this.basic = ["Section 1 to Section 5", "basic"]
@@ -10,6 +9,7 @@ class Explain extends React.Component {
         this.maj = ["Section 16 to Section 20", "maj"]
         this.squares = [this.basic, this.int, this.coll, this.maj]
     }
+
     render() {
         const style = {
             display: "flex",
@@ -20,15 +20,16 @@ class Explain extends React.Component {
             borderBottomRightRadius: "0",
             opacity: "0.3",
             transition: "0.5s",
-            fontSize: "15px",
+            fontSize: "clamp(10px, 2vw, 15px)",
           };
+        if (this.props.explain >= 4) {return ""}
         return <div id="explain">
-            {this.squares.map((a, index) => {
-                if (this.state.show === index) {
-                    return <div style={Object.assign({}, style, {opacity: "0.7"})} id={a[1]}>{a[0]}</div>
-                }
-                return <div style={style} id={a[1]}>{a[0]}</div>})}
-        </div>
+                    {this.squares.map((a, index) => {
+                        if (this.props.explain === index) {
+                            return <div style={Object.assign({}, style, {opacity: "0.8"})} id={a[1]}>{a[0]}</div>
+                        }
+                    return <div style={style} id={a[1]}>{a[0]}</div>})}
+                </div>
     }
 }
 

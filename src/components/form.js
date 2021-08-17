@@ -18,13 +18,13 @@ class Form extends React.Component {
 
     render() {
         if (this.state.isready) {
-            document.getElementById("explain-basic").style.opacity = 0.7;
-            return( <Test many_q={ this.state.many_ques } many_s={ cons.level_value } requer={ this.state.requer } /> )
+            return( <Test many_q={ this.state.many_ques } requer={ this.state.requer } /> )
+
         }
         return (
             <div id="form">
                 <form>
-                    How many questions per section?<br></br><select id="questions_value" onChange={(event) => {this.setState({ many_ques: parseInt(event.target.value), requer: parseInt(event.target.value)}); console.log(this.state)}}>
+                    How many questions per section?<br></br><select id="questions_value" onChange={(event) => {this.setState({ many_ques: parseInt(event.target.value), requer: parseInt(event.target.value)})}}>
                         {this.options.map(a => {
                             if (a === 3) {
                                 return <option value={a} selected>{a}</option>}

@@ -1,104 +1,97 @@
 import React from "react";
-import Section from "../components/section"
+import Explain from "./explain"
+import Question from "./question"
+import * as cons from '../constants';
+
+
+/* This function return a list with amount elements, whit different randoms whole numbers 
+between 0 and max */
+function pickRandoms(amount, max) {
+    let actual = []
+    for (let i = 0; i < amount; i++) {
+        let randomNumber = Math.floor(Math.random() * max)
+        while (actual.includes(randomNumber)) {
+            randomNumber = Math.floor(Math.random() * max)
+        }
+        actual.push(randomNumber)
+    }
+    return actual
+}
 
 class Test extends React.Component {
     /* Which section and question render */
-    state = {questions: []}
+    state = { explain: 0, section: 0, question: 0, corrects: 0, finished: false, win: false}
     constructor(props) {
         super(props);
-        this.sections = []
-        this.points = []
+        this.total_points = []
+        this.score = 0
+        this.questions_values = []
+        this.randoms = []
+        this.colors = [["yellowgreen", "black"], ["orange", "black"], ["purple", "white"], ["black", "white"], ["",""]]
+        for (let i = 0; i<20; i++) {
+            this.randoms.push(pickRandoms(this.props.many_q, cons.max_value))
+        }
+        for (let sec = 0; sec < 20; sec++) {
+            let q = 0;
+            for (let j of this.randoms[sec]) {
+                this.questions_values.push([sec, q, j])
+                q++}
+        }
     }
 
-    /*When the user select an option, this function detect the question, register the next-one and show to the user*/
-    next_question = (corrects) => {
-        let actual = document.getElementsByClassName("showing-q")[0];
-        actual.classList.remove("showing-q")
-        /* s is the name of the actual question, which was answered */
-        let s = actual.className.split(' ')[1]
-        /* Number of actual section and question */
-        let actual_sec = parseInt(s.split('-')[0])
-        let actual_ques = parseInt(s.split('-')[1])
-        let si = ''
-        /* If it's NOT the end of section */
-        if (actual_ques < this.props.many_q - 1) {
-            /* si is the name of next questions which will be render */
-            si += actual_sec.toString() + '-' + (actual_ques + 1).toString();
-            let sig = document.getElementsByClassName(si)[0];
-            sig.className += ' showing-q';
-            return
-        }
-        this.points.push(corrects)
-        /* If win the section, else not */
-        if (corrects >= this.props.requer) {
-            /* If it's the end of game, else not */
-            if ((actual_sec + 1).toString() === this.props.many_s.toString() && (actual_ques + 1).toString() === this.props.many_q.toString()) {
-                document.getElementById("explain-maj").style.opacity = 0.3
-                this.giveInfo(true);
-                return}
-            /* Showing the next section */
-            let actsec = document.getElementsByClassName('showing-sec')[0];
-            let actcount = document.getElementsByClassName("showing-count")[0]
-            /* next is the number of the section that will be render */
-            let next = parseInt(actsec.classList[1].split('-')[1]) + 1;
-            /* opacity of information boxes */
-            if (next % 5 === 0) {
-                /* Change color of explain */
-            }
-            actcount.classList.remove("showing-count")
-            actsec.classList.remove('showing-sec')
-            let sigsec = document.getElementsByClassName('sec-' + next.toString())[0]
-            let sigcount = document.getElementById("count" + next.toString());
-            sigsec.className += ' showing-sec';
-            sigcount.className += " showing-count"
-            /* Showing the first question of the new section */
-            si += (actual_sec + 1).toString() + '-0';
-            let sig = document.getElementsByClassName(si)[0];
-            sig.className += ' showing-q';
-            }
-        else {
-            this.giveInfo(false)
-            return}
-    }
+    /* When the user select an option, this function detect the question, register the next-one and show to the user */
+    next_question = (correct) => {
+        correct && this.setState({ corrects: this.state.corrects + 1 })
+        this.setState({ question: this.state.question + 1 })
 
-    giveInfo = (win) => {
-        /* Show the info of the game */
-        let info = document.getElementById("info");
-        info.style.zIndex = 200;
-        info.style.display = "inline-block";
-        /* Remove counting divs */
-        let countings = document.getElementsByClassName("counting")
-        for (let i = 0; i<Object.keys(countings).length; i++) {
-            countings[i].style.display = "none";
+        /* If is the end of the section */
+        if (this.state.question >= this.props.many_q) {
+            this.total_points.push(this.state.corrects)
+            this.score += this.state.corrects;
+            /* if lose the section */
+            if (this.state.corrects < this.props.requer) {
+                this.setState({ finished: true, explain: 4 })}
+            else {
+                this.setState({ section: this.state.section + 1, question: 0, corrects: 0 })
+                this.state.section % 5 === 0 && this.setState({ explain: this.state.explain + 1 })
+                this.state.section === 20 && this.setState({ finished: true, win: true })
+            }
         }
-        /* t is the info */
-        let t = ""
-        t += `You played the math test with <b>${this.props.many_s}</b> sections and need <b>${this.props.requer}</b> corrects every section<br>`
-        if (this.points.length < this.props.many_s) {t += `But you just get the section <b>${this.points.length}</b><br>`}
-        t += `Each section had <b>${this.props.many_s}</b> questions<br>`
-        let i = 1;
-        let sum = 0
-        this.points.forEach(a => {
-            t += `Section ${i}: ` + a + "/" + this.props.many_q + "<br>";
-            sum += a;
-            i++})
-        t += `That give you a total of ${sum}/${this.points.length * this.props.many_q} = <b>${Math.round(1000 * sum/(this.points.length * this.props.many_q)) / 10}%</b> of precision`
-        if (win) {
-            t += "<p>¡Congratulations!</p><br>";
-        } else {
-            t += "<p>¡Try Again!</p><br>";
-        }
-        info.innerHTML = t + "<button type='button' onclick='window.location.reload()'>Play again</button>";
     }
 
     render () {
-        for (let i=0; i < this.props.many_s; i++) {
-            this.sections.push(<Section level={i} next_question={this.next_question} many_q={this.props.many_q} req={this.props.requer}/>)}
+        if (this.state.finished) {
+            return <div id="info">
+                You played the math test with {this.props.many_q} questions every section<br></br>
+                You needed {this.props.requer} corrects every section to pass<br></br>
+                You arrived to the section {this.state.section}<br></br>
+                {this.total_points.map((a, index) => {
+                    return <p>Section {index + 1}: {a}/{this.props.many_q}</p>
+                })}
+                This give you a total of {this.score}/{(this.state.section + 1) * this.props.many_q} = {Math.floor(100 * this.score / ((this.state.section + 1) * this.props.many_q))}%<br></br>
+                <b>
+                {this.state.win ? (
+                    <p>Congratulations</p>
+                ) : (
+                    <p>Try again</p>
+                )}</b><br></br>
+                <button type='button' onclick='window.location.reload()'>Play again</button></div>
+        }
         return (
             <div class='app'>
-                <div id="info"></div>
-                {this.sections.map(a => {
-                    return a
+                <Explain explain={ this.state.explain }/>
+                <div class="counting" style={{ 
+                    backgroundColor: this.colors[Math.floor(this.state.section / 5)][0], 
+                    color: this.colors[Math.floor(this.state.section / 5)][1] }}>
+                        <div class="section-info" id="info-sec">Section {this.state.section + 1}/{cons.level_value}</div>
+                        <div class="section-info" id="info-ques">Question: {this.state.question+1}/{this.props.many_q}</div>
+                        <div class="section-info" id="info-corr">Corrects: {this.state.corrects}/{this.props.requer}</div>
+                </div>
+                {this.questions_values.map(a => {
+                    if (this.state.section === a[0] && this.state.question === a[1]) {
+                        return <Question section={a[0]} option={a[2]} action={this.handler} ques={a[1]} next_ques={this.next_question}/>
+                    }
+                    return ""
                 })}
             </div>
         )

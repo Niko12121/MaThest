@@ -1,8 +1,6 @@
 import React from 'react';
 import Header from "./components/header";
 import Form from "./components/form";
-import Explain from "./components/explain";
-
 
 function App() {
     let squares = [];
@@ -12,7 +10,6 @@ function App() {
     return (
       <React.Fragment>
         <Header />
-        <Explain />
         <Form />
         <ul class="background">
           {squares.map(a => {
