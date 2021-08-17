@@ -50,7 +50,7 @@ export const questions = [
         ["<p>How many solution have the equality (x²+2x+1)²=0</p>", [1, 0, -1, 2, 3, 4]],
         ["<p>Let f a function &#8477; -> &#8477;, if f(q)=0 for all q in &#8474;, then f=0</p>", ["False", "True"]],
         ["<p>How many natural numbers exist as solution to inequallity 2x²+4x+2 ≤ 8÷x</p>", [1, 0, 2, 3, 4, 5]],
-        ["<p>If the rect y=x+n intersect once with the paraboll y=ax²+bx+c, what is n?</p>", ["<sup>c - (b-1)²</sup> &#8260; <sub>4a</sub>", "<sup>(8c - b²)</sup> &#8260; <sub>4a</sub>", "(4c² - b(b + a)²", "<sup>(2c - b²)</sup> &#8260; <sub>4a²</sub>", "b² - 4ac", "a² + b + c"]]
+        ["<p>If |4-2x| > 8 then</p>", ["x < -2 or x > 6", "x < -2 and x > 6", "x < 2", "x < 2 and x > -6", "x > 2 and x < 6", "x > 2 or x < 6"]]
     ],
     [/* Section 8 */
         ["<p>If the distance between (5, 2, 0) and (7, -4, x) is 7, then x can be equal to</p>", [3, 2, 0, 1, -4, 5]],
@@ -63,7 +63,7 @@ export const questions = [
         ["<p>There are more rational numbers than reals between 0 and 1</p>", ["False", "True"]],
         ["<p>If a circle has diameter x cm. and area x cm.², then x equals to</p>", [2, 0, 1, "π", 4, 6]],
         ["<p>How many different anagram exist (not necessarily meaningful) of the word 'revenge'</p>", [840, 720, 5040, 72, 1024, 640]],
-        ["<p>If |4-2x| > 8 then</p>", ["x < -2 or x > 6", "x < -2 and x > 6", "x < 2", "x < 2 and x > -6", "x > 2 and x < 6", "x > 2 or x < 6"]],
+        ["<p>If the rect y=x+n intersect once with the paraboll y=ax²+bx+c, what is n?</p>", ["<sup>c - (b-1)²</sup> &#8260; <sub>4a</sub>", "<sup>(8c - b²)</sup> &#8260; <sub>4a</sub>", "(4c² - b(b + a)²", "<sup>(2c - b²)</sup> &#8260; <sub>4a²</sub>", "b² - 4ac", "a² + b + c"]],
         ["<p>Let (a,b) the vertex of the graph given by x²+4x-2, then a+b equals to</p>", [-8, 12, -12, -21, -18, 0]]
     ],
     [/* Section 10 */
